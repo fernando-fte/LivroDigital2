@@ -38,8 +38,6 @@
 	function construct_html_required ($post) {
 		// $post = text //recebe o tipo de arquivo a ser montado
 
-
-
 		$temp['construct'] = false;
 
 		// Monta HEADER
@@ -71,5 +69,62 @@
 
 		// Imprime solicitação
 		echo $return;
+	}
+
+	# # # INCLUSAO DE PAGINAS COMPLETAS
+	function construct_page_required ($post) {
+
+		// Declara instancias as instancias do resultado
+		$result = array(
+			'success' => null,
+			'erro' => null,
+			'function' => 'construct_page_required',
+			'process' => array (
+				'inicia' => array (
+					'success' => true
+				),
+				'include' => array (
+					'success' => null
+				)
+			)
+		);
+
+		# # # Valida se existe o conjunto de infomações
+		if (array_key_exists($post, $GLOBALS['settings']['page'])) {
+
+			$me = $GLOBALS['settings']['page'][$post];
+
+			# # # Valida se existe includes
+			if (array_key_exists('include', $me) == true || count($me['include']) > 0) {
+
+				// echo  'ok';
+
+				// # navega em cada valor a ser incluido
+				// for ($i=0; $i < count($me['include']); $i++) { 
+					
+
+				// }
+			}
+
+			# # # Caso não exista includes
+			else {
+				$result['success'] = false;
+				$result['process']['include']['success'] = false;
+				$result['process']['include']['erro'] = 'Não foi descrito uma lista de inclusão para "'.$post.'"';
+				$result['erro'] = $result['process']['include']['erro'];
+			}
+
+			unset($me);
+		}
+
+		# # # caso não exista o conjunto de informações solicitadas
+		else {
+			$result['success'] = false;
+			$result['process']['inicia']['success'] = false;
+			$result['process']['inicia']['erro'] = 'Não foi declarado "'.$post.'"';
+			$result['erro'] = $result['process']['inicia']['erro'];
+		}
+		print_r($result);
+		return $result;
 	}
 ?>

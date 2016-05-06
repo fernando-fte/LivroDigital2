@@ -45,5 +45,17 @@
 # # # # # # # # Configura paginas básicas
 	$settings['page']['home']['title'] = 'Home';
 
+	$settings['page']['xml'] = array(
+
+		'title' => 'Teste de leitura de xml',
+
+		'description' => 'A pagina deve importar e ler xml',
+
+		'_include' => array(
+			'teste_xml.php'
+		)
+	);
+
+
 
 ?>
