@@ -4,6 +4,9 @@
 	$post = $_POST;
 	$get = $_GET;
 
+	// Oculta todos os erros do php
+	error_reporting(0);
+
 	// Config page default
 	if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
 	if (!array_key_exists('page', $get)) { $get['page'] = 'home'; }
@@ -51,11 +54,44 @@
 
 		'description' => 'A pagina deve importar e ler xml',
 
-		'_include' => array(
+		'include' => array(
 			'teste_xml.php'
 		)
 	);
 
 
 
+# # # # # Configura modulo de path relativo
+
+	// entra com dados do servidor
+	function path_relative() {
+		// DECLARA INSTANCIAS DO RESULTADO
+		$result = array(
+			'success' => null,
+			'erro' => null,
+			'this' => 'F::path_relative',
+			'done' => null,
+			'process' => false
+		);
+
+		# remove argumentos
+		$temp = explode('?', $_SERVER['REQUEST_URI'])[0];
+
+		# explode as barras
+		$temp = explode('/', $temp);
+
+		# inicia loop de resultado
+		for ($i=0; $i < count($temp); $i++) { 
+
+			// print $temp[$i]."\n";
+			if ($temp[$i] != '') {
+
+				$result['done'] .= '../';
+			}
+		}
+
+		return $result;
+	}
+
+	print_r(path_relative());
 ?>

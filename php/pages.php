@@ -74,11 +74,11 @@
 	# # # INCLUSAO DE PAGINAS COMPLETAS
 	function construct_page_required ($post) {
 
-		// Declara instancias as instancias do resultado
+		// DECLARA INSTANCIAS DO RESULTADO
 		$result = array(
 			'success' => null,
 			'erro' => null,
-			'function' => 'construct_page_required',
+			'this' => 'F::construct_page_required',
 			'process' => array (
 				'inicia' => array (
 					'success' => true
@@ -101,9 +101,10 @@
 
 				// # navega em cada valor a ser incluido
 				// for ($i=0; $i < count($me['include']); $i++) { 
-					
 
 				// }
+
+				// $result['process']['include']['content'] = $me['include'];
 			}
 
 			# # # Caso não exista includes
