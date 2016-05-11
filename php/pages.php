@@ -1,5 +1,68 @@
 <?php 
 
+	# # # TRATA CAMIMHOS RELATIVOS
+	function path_relative($post) {
+		# $post = $settings['file'] | $settings['dir'] type text
+
+		# # # DECLARA INSTANCIAS DO RESULTADO
+		$result = array(
+			'success' => null,
+			'erro' => null,
+			'this' => 'F::path_relative',
+			'done' => null,
+			'process' => array (
+				'path relativo' => array ('success' => true),
+				'path no post' => array ('success' => null)
+			),
+		);
+
+		# # # # # // # # # # # #
+		# remove argumentos
+		$temp = explode('?', $_SERVER['REQUEST_URI'])[0];
+
+		# remove nó root da pasta do projeto
+		$temp = str_replace($GLOBALS['settings']['wwwproj'], '', $temp);
+
+		# explode as barras
+		$temp = explode('/', $temp);
+
+		# #inicia loop para seelecionar o path relativo
+		for ($i=0; $i < count($temp); $i++) { 
+
+			// print $temp[$i]."\n";
+			if ($temp[$i] != '') {
+
+				$result['done'] .= '../';
+			}
+		}
+
+		# apaga temp
+		unset($temp);
+		# # # # # // # # # # # #
+
+		# # # # # // # # # # # #
+		if ($post != false) {
+			# reserva resultado do processo de separar o path relativo
+			$result['process']['path relativo']['log'] = $result['done'];
+
+
+			# remove o caminho root do item
+			$result['done'] = str_replace($GLOBALS['settings']['wwwroot'].'/', $result['done'], $post);
+
+			# remove caminhos duplos "//"
+			$result['done'] = str_replace('//', '/', $result['done']);
+
+			# declara processo como valido
+			$result['process']['path no post']['success'] = true;
+		}
+
+		# apaga temp
+		unset($temp);
+		# # # # # // # # # # # #
+
+		return $result;
+	}
+
 	# # # HTMLS BASICOS
 	function html_required($post) {
 		// Recebe tipo de tag
@@ -7,27 +70,27 @@
 		switch ($post['type']) {
 
 			case 'title':
-				$result = '<title>'.$GLOBALS['settings']['page'][$post['content']]['title'].'</title>';
+				$result = '<title>'.path_relative($GLOBALS['settings']['page'][$post['content']]['title'])['done'].'</title>';
 				break;
 
 			case 'css':
-				$result = '<link rel="stylesheet" type="text/css" href="'.$GLOBALS['settings']['file'][$post['content']].'">';
+				$result = '<link rel="stylesheet" type="text/css" href="'.path_relative($GLOBALS['settings']['file'][$post['content']])['done'].'">';
 				break;
 
 			case 'less':
-				$result = '<link rel="stylesheet/less" type="text/css" href="'.$GLOBALS['settings']['file'][$post['content']].'">';
+				$result = '<link rel="stylesheet/less" type="text/css" href="'.path_relative($GLOBALS['settings']['file'][$post['content']])['done'].'">';
 				break;
 
 			case 'script':
-				$result = '<script src="'.$GLOBALS['settings']['file'][$post['content']].'"></script>';
+				$result = '<script src="'.path_relative($GLOBALS['settings']['file'][$post['content']])['done'].'"></script>';
 				break;
 
 			case 'script-js':
-				$result = '<script type="text/javascript" src="'.$GLOBALS['settings']['file'][$post['content']].'"></script>';
+				$result = '<script type="text/javascript" src="'.path_relative($GLOBALS['settings']['file'][$post['content']])['done'].'"></script>';
 				break;
 
 			case 'script-coffee':
-				$result = '<script type="text/coffeescript" src="'.$GLOBALS['settings']['file'][$post['content']].'"></script>';
+				$result = '<script type="text/coffeescript" src="'.path_relative($GLOBALS['settings']['file'][$post['content']])['done'].'"></script>';
 				break;
 		}
 

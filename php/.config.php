@@ -44,7 +44,6 @@
 
 	// print_r($settings);
 
-
 # # # # # # # # Configura paginas básicas
 	$settings['page']['home']['title'] = 'Home';
 
@@ -60,38 +59,4 @@
 	);
 
 
-
-# # # # # Configura modulo de path relativo
-
-	// entra com dados do servidor
-	function path_relative() {
-		// DECLARA INSTANCIAS DO RESULTADO
-		$result = array(
-			'success' => null,
-			'erro' => null,
-			'this' => 'F::path_relative',
-			'done' => null,
-			'process' => false
-		);
-
-		# remove argumentos
-		$temp = explode('?', $_SERVER['REQUEST_URI'])[0];
-
-		# explode as barras
-		$temp = explode('/', $temp);
-
-		# inicia loop de resultado
-		for ($i=0; $i < count($temp); $i++) { 
-
-			// print $temp[$i]."\n";
-			if ($temp[$i] != '') {
-
-				$result['done'] .= '../';
-			}
-		}
-
-		return $result;
-	}
-
-	print_r(path_relative());
 ?>
