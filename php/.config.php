@@ -19,13 +19,20 @@
 
 
 	# # # Configura path de diretórios
+
+	# diretorio de vendors
 	$settings['dir']['vendor'] = $settings['wwwroot'].'/vendor'; // Configura seleção do servidor mais pasta local
 	$settings['dir']['vendor-scripts'] = $settings['dir']['vendor'].'/scripts'; // Configura local dos frameworks scripts
 	$settings['dir']['vendor-bootstrap'] = $settings['dir']['vendor'].'/bootstrap'; // Configura local dos frameworks scripts
 	$settings['dir']['vendor-fontawesome'] = $settings['dir']['vendor'].'/FontAwesome'; // Configura local dos frameworks scripts
 
+	# diretorio de aplicações e estilos
 	$settings['dir']['app-style'] = $settings['wwwroot'].'/style'; // Configura seleção do servidor mais pasta local
 	$settings['dir']['app-script'] = $settings['wwwroot'].'/script'; // Configura seleção do servidor mais pasta local
+
+	# diretorio de paginas
+	$settings['dir']['teste'] = $settings['wwwroot'].'/teste';
+
 
 
 	# # # Configura path arquivos e framework
@@ -56,7 +63,7 @@
 		'description' => 'A pagina deve importar e ler xml',
 
 		'include' => array(
-			'teste_xml.php'
+			$settings['dir']['teste'].'/teste_xml.php'
 		)
 	);
 

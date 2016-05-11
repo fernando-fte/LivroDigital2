@@ -162,12 +162,16 @@
 
 				// echo  'ok';
 
-				// # navega em cada valor a ser incluido
-				// for ($i=0; $i < count($me['include']); $i++) { 
+				# # # Navega em cada valor a ser incluido
+				for ($i=0; $i < count($me['include']); $i++) { 
 
-				// }
+					# # # inclui cada item da biblioteca
+					include path_relative($me['include'][$i])['done'];
 
-				// $result['process']['include']['content'] = $me['include'];
+					$result['process']['include']['log'][$i] = path_relative($me['include'][$i])['done'];
+				}
+
+				$result['success'] = true;
 			}
 
 			# # # Caso não exista includes
@@ -189,6 +193,7 @@
 			$result['erro'] = $result['process']['inicia']['erro'];
 		}
 
+		print_r($result);
 		return $result;
 	}
 ?>
