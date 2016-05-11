@@ -11,11 +11,14 @@
 	if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
 	if (!array_key_exists('page', $get)) { $get['page'] = 'home'; }
 
+
+	# # # # # # # # # / CONFIGURA PATH DE TODOS OS ELEMENTOS / # # # # # # # # #
+	# # # Configura localhost
 	$settings['wwwproj'] = '/livrodigital'; // pasta atual do projeto
 	$settings['wwwroot'] = 'http://'.$_SERVER['SERVER_NAME'].$settings['wwwproj']; // Configura seleção do servidor mais pasta local
 
 
-///// Configura diretórios
+	# # # Configura path de diretórios
 	$settings['dir']['vendor'] = $settings['wwwroot'].'/vendor'; // Configura seleção do servidor mais pasta local
 	$settings['dir']['vendor-scripts'] = $settings['dir']['vendor'].'/scripts'; // Configura local dos frameworks scripts
 	$settings['dir']['vendor-bootstrap'] = $settings['dir']['vendor'].'/bootstrap'; // Configura local dos frameworks scripts
@@ -25,7 +28,7 @@
 	$settings['dir']['app-script'] = $settings['wwwroot'].'/script'; // Configura seleção do servidor mais pasta local
 
 
-////// Configura arquivos de framework
+	# # # Configura path arquivos e framework
 	$settings['file']['jquery'] = $settings['dir']['vendor-scripts'].'/jquery.min.js'; 
 	$settings['file']['coffee'] = $settings['dir']['vendor-scripts'].'/coffee-script.js'; 
 	$settings['file']['less'] = $settings['dir']['vendor-scripts'].'/less.min.js'; 
@@ -42,9 +45,8 @@
 	$settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
 	$settings['file']['app-coffee'] = $settings['dir']['app-script'].'/app.coffee';
 
-	// print_r($settings);
 
-# # # # # # # # Configura paginas básicas
+	# # # Configura conjunto de páginas
 	$settings['page']['home']['title'] = 'Home';
 
 	$settings['page']['xml'] = array(

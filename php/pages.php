@@ -1,6 +1,6 @@
 <?php 
 
-	# # # TRATA CAMIMHOS RELATIVOS
+	# # # \ TRATA CAMIMHOS RELATIVOS \ # # #
 	function path_relative($post) {
 		# $post = $settings['file'] | $settings['dir'] type text
 
@@ -18,26 +18,26 @@
 
 		# # # # # // # # # # # #
 		# remove argumentos
-		$temp = explode('?', $_SERVER['REQUEST_URI'])[0];
+		$me = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 		# remove nó root da pasta do projeto
-		$temp = str_replace($GLOBALS['settings']['wwwproj'], '', $temp);
+		$me = str_replace($GLOBALS['settings']['wwwproj'], '', $me);
 
 		# explode as barras
-		$temp = explode('/', $temp);
+		$me = explode('/', $me);
 
 		# #inicia loop para seelecionar o path relativo
-		for ($i=0; $i < count($temp); $i++) { 
+		for ($i=0; $i < count($me); $i++) { 
 
-			// print $temp[$i]."\n";
-			if ($temp[$i] != '') {
+			// print $me[$i]."\n";
+			if ($me[$i] != '') {
 
 				$result['done'] .= '../';
 			}
 		}
 
-		# apaga temp
-		unset($temp);
+		# apaga me
+		unset($me);
 		# # # # # // # # # # # #
 
 		# # # # # // # # # # # #
@@ -56,14 +56,14 @@
 			$result['process']['path no post']['success'] = true;
 		}
 
-		# apaga temp
-		unset($temp);
+		# apaga me
+		unset($me);
 		# # # # # // # # # # # #
 
 		return $result;
 	}
 
-	# # # HTMLS BASICOS
+	# # # \ HTMLS BASICOS \ # # #
 	function html_required($post) {
 		// Recebe tipo de tag
 
@@ -97,7 +97,7 @@
 		return $result;
 	}
 
-	# # # CONTRUÇÃO DO HTML
+	# # # \ CONTRUÇÃO DO HTML \ # # #
 	function construct_html_required ($post) {
 		// $post = text //recebe o tipo de arquivo a ser montado
 
@@ -134,7 +134,7 @@
 		echo $return;
 	}
 
-	# # # INCLUSAO DE PAGINAS COMPLETAS
+	# # # \ INCLUSAO DE PAGINAS COMPLETAS \ # # #
 	function construct_page_required ($post) {
 
 		// DECLARA INSTANCIAS DO RESULTADO
@@ -188,7 +188,7 @@
 			$result['process']['inicia']['erro'] = 'Não foi declarado "'.$post.'"';
 			$result['erro'] = $result['process']['inicia']['erro'];
 		}
-		print_r($result);
+
 		return $result;
 	}
 ?>
