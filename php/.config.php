@@ -53,11 +53,11 @@
 
 	// $settings['file']['style-css'] = $settings['dir']['app-style'].'/app.css';
 	// $settings['file']['style-less'] = $settings['dir']['app-style'].'/app.less';
-	$settings['file']['style-less'] = $settings['dir']['app-vg'].'style/app.less';
+	$settings['file']['style-less'] = $settings['dir']['app-vg'].'/style/app.less';
 
 	// $settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
 	// $settings['file']['app-coffee'] = $settings['dir']['app-script'].'/app.coffee';
-	$settings['file']['app-coffee'] = $settings['dir']['app-vg'].'scripts/app.coffee';
+	$settings['file']['app-coffee'] = $settings['dir']['app-vg'].'/scripts/app.coffee';
 
 
 	// -- TODO: FAZER APLICATIVO PARA PAGES CARREGAR O HEADER DINAMICO
