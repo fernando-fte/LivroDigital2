@@ -5,7 +5,7 @@
 	$get = $_GET;
 
 	// Oculta todos os erros do php
-	error_reporting(0);
+	// error_reporting(0);
 
 	// Config page default
 	if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
@@ -34,6 +34,10 @@
 	$settings['dir']['contents'] = $settings['wwwroot'].'/contents'; // Local base de todos os dados
 	$settings['dir']['form'] = $settings['dir']['contents'].'/form'; // Conjunto de  formuláros
 	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
+	$settings['dir']['app'] = $settings['wwwroot'].'/aplicativos'; // Local das aplicações rodando
+
+	# diretorio das aplicações
+	$settings['dir']['app-vg'] = $settings['dir']['app'].'/vgconsultoria'; // Local das aplicações rodando
 
 
 	# # # Configura path arquivos e framework
@@ -47,11 +51,16 @@
 
 	$settings['file']['fontawesome'] = $settings['dir']['vendor-fontawesome'].'/font-awesome.min.css'; 
 
-	$settings['file']['style-css'] = $settings['dir']['app-style'].'/app.css';
-	$settings['file']['style-less'] = $settings['dir']['app-style'].'/app.less';
+	// $settings['file']['style-css'] = $settings['dir']['app-style'].'/app.css';
+	// $settings['file']['style-less'] = $settings['dir']['app-style'].'/app.less';
+	$settings['file']['style-less'] = $settings['dir']['app-vg'].'style/app.less';
 
-	$settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
-	$settings['file']['app-coffee'] = $settings['dir']['app-script'].'/app.coffee';
+	// $settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
+	// $settings['file']['app-coffee'] = $settings['dir']['app-script'].'/app.coffee';
+	$settings['file']['app-coffee'] = $settings['dir']['app-vg'].'scripts/app.coffee';
+
+
+	// -- TODO: FAZER APLICATIVO PARA PAGES CARREGAR O HEADER DINAMICO
 
 
 	# # # Configura conjunto de páginas
@@ -65,6 +74,18 @@
 
 		'include' => array(
 			$settings['dir']['form'].'/form.basic.html'
+		)
+	);
+
+
+	$settings['page']['app-vg'] = array(
+
+		'title' => 'Educação e Novas Tecnologias para o Ensino',
+
+		'description' => 'Aplicativo modelo da VG',
+
+		'include' => array(
+			$settings['dir']['app-vg'].'/index.html'
 		)
 	);
 

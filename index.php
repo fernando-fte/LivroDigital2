@@ -4,7 +4,7 @@
 	<?php construct_html_required('header'); ?>
 	<body>
 
-	<?php construct_page_required('xml') ?>
+	<?php construct_page_required('app-vg') ?>
 
 	<?php construct_html_required('script'); ?>
 	</body>
