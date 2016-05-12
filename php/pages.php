@@ -193,7 +193,6 @@
 			$result['erro'] = $result['process']['inicia']['erro'];
 		}
 
-		print_r($result);
 		return $result;
 	}
 ?>

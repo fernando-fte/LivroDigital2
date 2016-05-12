@@ -32,7 +32,7 @@
 
 	# diretorio de paginas
 	$settings['dir']['teste'] = $settings['wwwroot'].'/teste';
-
+	$settings['dir']['books'] = $settings['wwwroot'].'/books';
 
 
 	# # # Configura path arquivos e framework
