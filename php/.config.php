@@ -31,8 +31,9 @@
 	$settings['dir']['app-script'] = $settings['wwwroot'].'/script'; // Configura seleção do servidor mais pasta local
 
 	# diretorio de paginas
-	$settings['dir']['teste'] = $settings['wwwroot'].'/teste';
-	$settings['dir']['books'] = $settings['wwwroot'].'/books';
+	$settings['dir']['contents'] = $settings['wwwroot'].'/contents'; // Local base de todos os dados
+	$settings['dir']['form'] = $settings['dir']['contents'].'/form'; // Conjunto de  formuláros
+	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
 
 
 	# # # Configura path arquivos e framework
@@ -63,7 +64,7 @@
 		'description' => 'A pagina deve importar e ler xml',
 
 		'include' => array(
-			$settings['dir']['teste'].'/teste_xml.php'
+			$settings['dir']['form'].'/form.basic.html'
 		)
 	);
 
