@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"app",
+				"app-cor-preto-0"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"scrip",
+				"script"
+			],
+			[
+				"ww",
+				"wwwroot"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
 				"error",
 				"error_reporting"
 			],
@@ -44,10 +68,6 @@
 				"a	Tag"
 			],
 			[
-				"font",
-				"fonte_inline"
-			],
-			[
 				"te",
 				"temp"
 			],
@@ -74,10 +94,6 @@
 			[
 				"o",
 				"offset"
-			],
-			[
-				"app",
-				"app-display"
 			],
 			[
 				"over",
@@ -340,10 +356,6 @@
 				"app-cor-padrao-60"
 			],
 			[
-				"fon",
-				"font-family"
-			],
-			[
 				"border",
 				"border-bottom"
 			],
@@ -561,14 +573,41 @@
 	},
 	"expanded_folders":
 	[
-		"/D/projeto/web/livrodigital"
+		"/D/projeto/web/livrodigital",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app"
 	],
 	"file_history":
 	[
-		"/D/projeto/web/livrodigital/index.php",
-		"/D/projeto/web/livrodigital/php/pages.php",
-		"/D/projeto/web/livrodigital/sub-1/sub-2/sub-3/index.php",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/marcacao_original.html",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tipografia.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tabela.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/variables.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/capa.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/nav-bar.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/capitulo.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/atividade.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/img/logo.pos.white.svg",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap/type.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap/print.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/pages.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap/variables.less",
 		"/D/projeto/web/livrodigital/php/.config.php",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/._.config.less",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/print.less",
+		"/D/projeto/web/livrodigital/index.php",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/scripts/app.coffee",
+		"/D/projeto/web/vg/livroDigital/scripts/app.coffee",
+		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-2/index.html",
+		"/D/projeto/web/livrodigital/php/pages.php",
+		"/D/projeto/web/livrodigital/teste/teste_xml.php",
+		"/C/Users/Usuário/Desktop/info.txt",
+		"/D/Google Drive/Fernando/.VG Consultoria/Projetos/Nova Logo/Materiais/Mokup/A4 Magazine Mockup - Free/Premium Version.txt",
+		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/direito-comercial.html",
+		"/D/projeto/web/livrodigital/sub-1/sub-2/sub-3/index.php",
 		"/D/projeto/web/livrodigital/_src/livrodigital",
 		"/D/projeto/web/livrodigital/php/.config.pages.json",
 		"/D/projeto/web/livrodigital/php/.navigation.json",
@@ -587,7 +626,6 @@
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/done/app/direito-comercial-unidade-ii.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/done/app/direito-comercial-unidade-i.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/processamento/Direito Comercial - vídeos.indd",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/direito-comercial.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/done/app/direito-comercial.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Direito Comercial/processamento/Direito Comercial [marcacao].html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Transtorno de Aprendizagem/done/app/transtornos-de-aprendizagem-unidade-iv.html",
@@ -668,41 +706,20 @@
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-ii.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-i.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/metodologia-de-pesquisa-cientifica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/done/app/planejamento-e-gestao-de-projetos-ambientais-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/done/app/planejamento-e-gestao-de-projetos-ambientais-unidade-iii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/done/app/planejamento-e-gestao-de-projetos-ambientais-unidade-ii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/done/app/planejamento-e-gestao-de-projetos-ambientais-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/planejamento-e-gestao-de-projetos-ambientais.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Fundamentos Histórico-Sociais da Educação Brasileira/done/app/fundamentos-historico-sociais-da-educacao-brasileira.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Fundamentos Histórico-Sociais da Educação Brasileira/processamento/Fundamentos Histórico-Sociais da Educação Brasileira - Vídeos.txt",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/processamento/marketing - vídeo.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/processamento/Marketing [marcacao].html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/Educação e Novas Tecnologias para o Ensino - Vídeos.txt",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/educacao-e-novas-tecnologias-para-o-ensino.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/processamento/Bioética - vídeos.txt",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/processamento/bioetica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Pre Produção/LOTE 3/Bioética/originais/revisão/entregue/nota.txt",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/Metodologia de Pesquisa Científica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Fundamentos Histórico-Sociais da Educação Brasileira/processamento/Fundamentos Histórico-Sociais da Educação Brasileira [marcacao].html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/processamento/Metodologia de Pesquisa Científica - Vídeos.txt",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 3/Metodologia de Pesquisa Científica/Metodologia de Pesquisa Científica.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 3/Metodologia de Pesquisa Científica/done/app/Novo Documento de Texto.txt",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Planejamento e Gestão de Projetos Ambientais/Planejamento e Gestão de Projetos Ambientais.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/processamento/Metodologia de Pesquisa Científica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/planejamento-e-gestao-de-projetos-ambientais.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/planejamento-estrategico-de-negocios-unidade-i.html",
-		"/C/Users/Usuário/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap"
+		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/metodologia-de-pesquisa-cientifica.html"
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
+			"D:\\projeto\\web\\livrodigital\\aplicativos\\vgconsultoria\\style\\app",
+			"D:\\projeto\\web\\livrodigital\\aplicativos\\vgconsultoria\\style\\bootstrap",
+			"D:\\projeto\\web\\livrodigital",
 			"D:\\projeto\\web\\vg\\livroDigital\\style\\less\\app",
 			"D:\\projeto\\web\\vg\\livroDigital\\style",
 			"D:\\projeto\\web\\vg\\livroDigital\\style\\less\\app",
@@ -733,6 +750,70 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"img/",
+			"library/6e1ba5deb1d776b987d720ce335c3318/",
+			"<table",
+			"<TABLE",
+			"img/",
+			"library/6e1ba5deb1d776b987d720ce335c3318/",
+			"data-book-graphic-item>",
+			"Pois bem, nisso que esboça uma espécie de micro-história da tecnologia, interessam-nos ",
+			"Em contrapartida, a Idade Média (dos meados do século XII até o século XIV) int",
+			"tb-titulo-td",
+			"<table",
+			"<span data-book-unidade-autor=\"2\">Thiago Garcia Martins</span>",
+			".cover-btn-nav",
+			"@app-cor-vermelho",
+			": ",
+			" ",
+			"padrao",
+			"fraco",
+			"não escolares no interior das práticas de ensino e aprendizagem.",
+			"@app-cor-padrao",
+			": ",
+			"box-leitura",
+			"info",
+			"cover-btn-iniciar app-ico-iniciar col-lg-2 col-md-3 col-sm-4 col-ss-4 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-ss-offset-3",
+			"{\"togo\":{\"to\":\"sumario\",\"cover\":false}}",
+			"Iniciar leitura",
+			".app-ati-alternativa-item",
+			"atividade",
+			"blockquote",
+			"<span  data-app-ctrl='{\"togo\":",
+			" data-app-ctrl='{\"display\":{\"put\":\".app-sum-section-item\",",
+			"Jefferson Gustavo dos Santos Campos",
+			"img/",
+			":",
+			"lighten",
+			"cover",
+			": ",
+			"#",
+			"less/",
+			"app/",
+			"\\n",
+			"<p id=\"[\\S*]*\"",
+			"$path_relative()",
+			"library/",
+			"css",
+			"\"cover-btn-tooltip\"",
+			"class=\"cover-btn-nav\"> ",
+			"data-app-ctrl='{\"togo\":{\"to\"",
+			" data-app-ctrl",
+			"library/6e1ba5deb1d776b987d720ce335c3318",
+			"e",
+			"Pesponsabilidade",
+			"ensina que existe uma sociedade apenas ",
+			"Pesponsabilidade ",
+			"teste",
+			"temp",
+			"CONFIGURA DIRETÓRIOS",
+			".'",
+			"typetext",
+			"result['done']",
+			"\"",
+			"trata caminho relativo",
+			"separa path relativo",
+			"processo",
 			"=",
 			"'success' => false,",
 			"	",
@@ -796,71 +877,7 @@
 			"<secao_cabeca>Indicação de Leitura</secao_cabeca>",
 			"<p data-book-section-label=\"Editora\">",
 			"<secao_p><span><strong>ISBN:</strong></span> ",
-			"<secao_p><span><strong>Editora:</strong></span> ",
-			"<secao_p><span><strong>Autor:</strong></span> ",
-			"<secao_p><span><strong>Nome do livro:</strong></span> ",
-			"<secao_cabeca>Indicação de Leitura</secao_cabeca>",
-			"<secao_cabeca>Indicação de Filme</secao_cabeca>",
-			"<secao_cabeca>Reflita</secao_cabeca>",
-			"Fique por dentro",
-			"<secao_cabeca>",
-			"<atividade_fim>",
-			"</feed_true>",
-			"		<feed_true>",
-			"</alternativa_true>",
-			"<alternativa_true>",
-			"</feed_false>",
-			"		<feed_false>",
-			"</alternativa>",
-			"		<alternativa>",
-			"</questao>",
-			"<questao>",
-			"<atividade_fim>",
-			"<questao>",
-			"li clas",
-			" class=\"corpo-secao-lista-letras\" ",
-			"<ol",
-			"Estudo de Caso",
-			"FoRUM",
-			"FóRUM",
-			"forumn",
-			"<ol>",
-			"<referencia_link><a href=\"",
-			"<referencias_p>",
-			"</fonte_inline>",
-			"<fonte_inline>",
-			"<fonte_inline> -> <span data-book-fonte>",
-			"autor_titulacao>|autor_info>|introducao_p>|unidade_introducao>",
-			"autor_titulacao>",
-			"<span>&#160;</span>",
-			"<strong>&#160;</strong>",
-			"<u>&#160;</u>",
-			"\\^br\\^",
-			"<bi>",
-			"<strong>[ ]*</strong>|<span>[ ]*</span>|<i>[ ]*</i>|<b>[ ]*</b>|<u>[ ]*</u>|<a id=\"[\\S*]*\" />",
-			"<[/]*x>",
-			"<x ",
-			"[ ]*class=\"[ ]*\"",
-			"[0-9*]*[a-z*]*.&#9;",
-			"[ ]*para-style-override-[0-9*]*|[ ]*char-style-override-[0-9*]*|[ ]*frame-[0-9*]*|[ ]*id=\"table-[0-9*]*\"|[ ]*Row-Column-[0-9*]*|[ ]*xml:lang=\"[\\S*]*\"|[ ]*No-Paragraph-Style|[ ]*No-Table-Style|[ ]*corpo-secao-lista-bullets",
-			"[ ]*para-style-override-[0-9*]*|[ ]*char-style-override-[0-9*]*|[ ]*frame-[0-9*]*|[ ]*id=\"table-[0-9*]*\"|[ ]*Row-Column-[0-9*]*|[ ]*xml:lang=\"[\\S*]*\"|[ ]*No-Paragraph-Style|[ ]*No-Table-Style|[ ]*corpo-secao-lista-bullets|",
-			"<div data-book-unidade-content>",
-			"<unidade_cabeca",
-			"<div data-book-unidade-info>",
-			"unidade_introducao>",
-			"<div data-book-unidade-introducao>",
-			"<introcucao_fim",
-			"<unidade_introducao>",
-			"unidade_introducao>",
-			"<unidade_autor class=\"autor\">",
-			"<p data-book-unidade-titulo><strong>",
-			"<unidade_titulo>",
-			"autor_info>",
-			"introducao_p>",
-			"autor_info>",
-			"autor_titulacao>",
-			"As alternativas a e",
-			"casaço"
+			"<secao_p><span><strong>Editora:</strong></span> "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -868,6 +885,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<p",
+			"library",
+			"library/",
 			"h4>",
 			"h3>",
 			"h2>",
@@ -992,10 +1012,7 @@
 			"\\t<p data-book-section-label=\"Nome do filme\">",
 			"<p data-book-section-label=\"Nome do filme\">",
 			"</div>",
-			"\n		<div data-book-section=\"4\">",
-			"\n		<div data-book-section=\"3\">",
-			"\\n\\t\\t<div data-book-section=\"3\">",
-			"\\n\\t\\t<div data-book-section=\"4\">"
+			"\n		<div data-book-section=\"4\">"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1050,7 +1067,7 @@
 	"project": "livrodigitalpro.sublime-project",
 	"replace":
 	{
-		"height": 38.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1059,6 +1076,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"con",
+				"php\\.config.php"
+			],
 			[
 				"tipo",
 				"style\\less\\app\\tipografia.less"
@@ -1470,10 +1491,6 @@
 			[
 				"out",
 				"style\\less\\app\\outros.less"
-			],
-			[
-				"con",
-				"style\\._.config.less"
 			],
 			[
 				"tool",
