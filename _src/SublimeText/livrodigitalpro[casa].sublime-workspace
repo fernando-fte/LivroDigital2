@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"remo",
+				"remove"
+			],
+			[
+				"b",
+				"book"
+			],
+			[
+				"dom",
+				"dom_import_simplexml"
+			],
+			[
+				"new",
+				"news"
+			],
+			[
 				"simple",
 				"simplexml_load_file"
 			],
@@ -231,13 +247,6 @@
 	},
 	"buffers":
 	[
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -285,14 +294,49 @@
 	},
 	"expanded_folders":
 	[
-		"/D/fernando.fte/Projetos/web/livrodigital"
+		"/D/fernando.fte/Projetos/web/livrodigital",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/scripts",
+		"/D/fernando.fte/Projetos/web/livrodigital/books",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form"
 	],
 	"file_history":
 	[
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/index.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/scripts/app.coffee",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/sumario.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/library/figura.4.1.svg",
+		"/D/fernando.fte/Projetos/web/livrodigital/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/.config.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/pages.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.css",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/variables.less",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/cmd.start.txt",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/form.basic.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/formularios/form.basic.xml",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/functions.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/teste/teste_xml.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor/phpSelectSQL.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/index.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/parse.book.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/login.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/teste.producao.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/._.config.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/add-livro-info.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/Matriz/index.php",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/Matriz/fromulario.html",
+		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/functions.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/xml/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/books/index.xml",
+		"/D/fernando.fte/Projetos/web/laboratorio/xmlPhpJs/index.php",
+		"/D/fernando.fte/Projetos/web/laboratorio/xmlPhpJs/simple_xml.xml",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/xmlparse.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/teste/teste_xml.2.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/_src/SublimeText/livrodigitalpro.sublime-project",
 		"/D/fernando.fte/Projetos/web/laboratorio/xmlPhpJs/testes/xmlDom1.php",
-		"/D/fernando.fte/Projetos/web/laboratorio/xmlPhpJs/simple_xml.xml",
-		"/D/fernando.fte/Projetos/web/laboratorio/xmlPhpJs/index.php",
 		"/D/fernando.fte/Projetos/web/area51/matematica/matematic.tex",
 		"/D/fernando.fte/Projetos/web/area51/matematica/matematica.html",
 		"/D/fernando.fte/Projetos/web/area51/matematica/bioetica.xml",
@@ -385,48 +429,20 @@
 		"/D/fernando.fte/Projetos/web/livroDigital/lab/html_construct/index.php",
 		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/nav-bar.html",
 		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/outros.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/admin/._.config.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/responsive-utilities.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/grid.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/globais.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins/grid-framework.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/type.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/utilities.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins/background-variant.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins/border-variant.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/test.html",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins/text-emphasis.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/index.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/app.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/mixins/grid.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/teste.html",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/responsivo.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/estrutura.capa.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/tipografia.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/bootstrap.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/estrutura.text.html",
-		"/C/Users/FernandoTruculo/Downloads/_.config (1).php",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/capa.html",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/index.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/admin/functions.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/admin/add-livro-info.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/laboratorio/roteiro.txt",
-		"/D/fernando.fte/Projetos/web/livroDigital/admin/index.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/admin/_.config.php",
-		"/D/fernando.fte/Projetos/web/phpSelectSQL/index.php",
-		"/D/fernando.fte/Projetos/web/area51/functions.php",
-		"/D/fernando.fte/Projetos/web/phpSelectSQL/README.md"
+		"/D/fernando.fte/Projetos/web/livroDigital/admin/._.config.php"
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
+			"D:\\fernando.fte\\Projetos\\web\\livrodigital\\aplicativos\\vgconsultoria\\style",
+			"D:\\fernando.fte\\Projetos\\web\\livrodigital",
+			"D:\\fernando.fte\\Projetos\\web\\livrodigital\\aplicativos\\vgconsultoria\\style",
 			"D:\\fernando.fte\\Projetos\\web\\livroDigital\\style\\less\\bootstrap"
 		]
 	},
@@ -435,6 +451,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"section-page",
+			"app-sum-section-sections",
+			".app-sum-btn-icon-sub",
+			"body { display: none !important }",
+			"49ddffaecd57f9abec865d06e8b798cb",
+			"app-sum-section-sections",
+			"style\\",
+			"app-sum-section-sections",
 			"1",
 			"void",
 			" value=",
@@ -554,15 +578,7 @@
 			"Columns,",
 			".make-grid-row",
 			".make-grid-row(",
-			".make-row(",
-			"col-row",
-			".loop-row",
-			".row",
-			".float-row",
-			"@grid-columns",
-			".float-row",
-			"font",
-			"md"
+			".make-row("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -596,36 +612,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -685,6 +673,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"conf",
+				"php\\.config.php"
+			],
+			[
+				"confi",
+				"php\\.config.php"
+			],
 			[
 				"lesspage",
 				"style\\less\\app\\pages.less"
