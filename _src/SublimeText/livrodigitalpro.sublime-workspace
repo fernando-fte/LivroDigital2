@@ -515,6 +515,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
+			"settings":
+			{
+				"buffer_size": 384881,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
+			"settings":
+			{
+				"buffer_size": 2095,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -576,6 +600,8 @@
 		"/D/projeto/web/livrodigital",
 		"/D/projeto/web/livrodigital/aplicativos",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/img",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/scripts"
 	],
 	"file_history":
@@ -751,6 +777,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"49ddffaecd57f9abec865d06e8b798cb",
+			"app-graphic-content ",
+			"app-graphic-content",
+			"<article",
+			"app-box-content",
+			"app-box-",
+			"Para Campos (2014), perseguir o significado da noção de técnica e estabe",
 			"img/",
 			"library/6e1ba5deb1d776b987d720ce335c3318/",
 			"<table",
@@ -871,14 +904,7 @@
 			"<legenda><span><etiqueta>Figura ",
 			"<legenda>",
 			"Quadro 1",
-			"<table",
-			"<secao_cabeca>Atividades</secao_cabeca>",
-			"<secao_cabeca>Indicação de Leitura</secao_cabeca>",
-			"</span> ",
-			"<secao_cabeca>Indicação de Leitura</secao_cabeca>",
-			"<p data-book-section-label=\"Editora\">",
-			"<secao_p><span><strong>ISBN:</strong></span> ",
-			"<secao_p><span><strong>Editora:</strong></span> "
+			"<table"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1024,8 +1050,94 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 384881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34591,
+								34591
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								946,
+								866
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 143.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
