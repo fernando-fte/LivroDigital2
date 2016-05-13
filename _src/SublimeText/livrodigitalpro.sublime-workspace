@@ -574,13 +574,14 @@
 	"expanded_folders":
 	[
 		"/D/projeto/web/livrodigital",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app"
+		"/D/projeto/web/livrodigital/aplicativos",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/scripts"
 	],
 	"file_history":
 	[
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/marcacao_original.html",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/marcacao_original.html",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tipografia.less",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tabela.less",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/variables.less",
