@@ -104,14 +104,14 @@
 		$temp['construct'] = false;
 
 		// Monta HEADER
-		if ($post == 'header') {
+		if ($post == 'head') {
 
-			$temp['construct'] .= "\n\t<header>";
+			$temp['construct'] .= "\n\t<head>";
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$GLOBALS['get']['page']));
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'bootstrap-css'));
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'fontawesome'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'less', 'content'=>'style-less'));
-			$temp['construct'] .= "\n\t</header>";
+			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'style-css'));
+			$temp['construct'] .= "\n\t</head>";
 			$temp['construct'] .= "\n";
 		}
 
@@ -121,7 +121,7 @@
 			$temp['construct'] .= "\n";
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'jquery'));
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'coffee'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'less'));
+			// $temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'less'));
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'bootstrap-js'));
 			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script-coffee', 'content'=>'app-coffee'));
 			$temp['construct'] .= "\n";

@@ -53,6 +53,7 @@
 
 	// $settings['file']['style-css'] = $settings['dir']['app-style'].'/app.css';
 	// $settings['file']['style-less'] = $settings['dir']['app-style'].'/app.less';
+	$settings['file']['style-css'] = $settings['dir']['app-vg'].'/style/app.css';
 	$settings['file']['style-less'] = $settings['dir']['app-vg'].'/style/app.less';
 
 	// $settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
