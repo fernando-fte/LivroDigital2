@@ -5,7 +5,7 @@
 	$get = $_GET;
 
 	// Oculta todos os erros do php
-	// error_reporting(0);
+	error_reporting(0);
 
 	// Config page default
 	if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
@@ -41,54 +41,106 @@
 
 
 	# # # Configura path arquivos e framework
-	$settings['file']['jquery'] = $settings['dir']['vendor-scripts'].'/jquery.min.js'; 
-	$settings['file']['coffee'] = $settings['dir']['vendor-scripts'].'/coffee-script.js'; 
-	$settings['file']['less'] = $settings['dir']['vendor-scripts'].'/less.min.js'; 
-	$settings['file']['less'] = $settings['dir']['vendor-scripts'].'/less.min.js'; 
+	$settings['file'] = array(
+		# VENDORS
+		# # scripts
+		'jquery' => $settings['dir']['vendor-scripts'].'/jquery.min.js',
+		'coffee' => $settings['dir']['vendor-scripts'].'/coffee-script.js',
+		'less' => $settings['dir']['vendor-scripts'].'/less.min.js',
+		'bootstrap-js' => $settings['dir']['vendor-bootstrap'].'/bootstrap.min.js',
 
-	$settings['file']['bootstrap-css'] = $settings['dir']['vendor-bootstrap'].'/bootstrap.min.css'; 
-	$settings['file']['bootstrap-js'] = $settings['dir']['vendor-bootstrap'].'/bootstrap.min.js'; 
+		# # scripts
+		'bootstrap-css' => $settings['dir']['vendor-bootstrap'].'/bootstrap.min.css',
+		'fontawesome' => $settings['dir']['vendor-fontawesome'].'/font-awesome.min.css',
+		# # # # # #
 
-	$settings['file']['fontawesome'] = $settings['dir']['vendor-fontawesome'].'/font-awesome.min.css'; 
+		# APLICAÇÕES
+		# # aplicativo default
+		'style-css' => $settings['dir']['app-style'].'/app.css',
+		'style-less' => $settings['dir']['app-style'].'/app.less',
 
-	// $settings['file']['style-css'] = $settings['dir']['app-style'].'/app.css';
-	// $settings['file']['style-less'] = $settings['dir']['app-style'].'/app.less';
-	$settings['file']['style-css'] = $settings['dir']['app-vg'].'/style/app.css';
-	$settings['file']['style-less'] = $settings['dir']['app-vg'].'/style/app.less';
+		'app-js' => $settings['dir']['app-script'].'/app.js',
+		'app-coffee' => $settings['dir']['app-script'].'/app.coffee',
+		# # # #
 
-	// $settings['file']['app-js'] = $settings['dir']['app-script'].'/app.js'; 
-	// $settings['file']['app-coffee'] = $settings['dir']['app-script'].'/app.coffee';
-	$settings['file']['app-coffee'] = $settings['dir']['app-vg'].'/scripts/app.coffee';
-
+		# # aplicativo "livro digital"
+		'app-vg-style-css' => $settings['dir']['app-vg'].'/style/app.css',
+		'app-vg-style-less' => $settings['dir']['app-vg'].'/style/app.less',
+		'app-vg-app-coffee' => $settings['dir']['app-vg'].'/scripts/app.coffee'
+		# # # #
+	);
 
 	// -- TODO: FAZER APLICATIVO PARA PAGES CARREGAR O HEADER DINAMICO
 
+	# # Define falores default do html
+	$settings['default']['html'] = array(
+		'head' => array(
+			'meta' => array(
+				'@config' => array(
+					array('charset'=>'utf-8'),
+					array('http-equiv'=>'X-UA-Compatible', 'content'=>'IE=edge'),
+					array('name'=>'viewport', 'content'=>'width=device-width, initial-scale=1')
+				),
+				'description' => null,
+				'keywords' => null,
+				'author' => 'FTE Developer by VG Consultoria'
+			),
 
-	# # # Configura conjunto de páginas
-	$settings['page']['home']['title'] = 'Home';
+			'title' => null,
 
-	$settings['page']['xml'] = array(
+			'style' => array(
+				// name-path-file => type-file-include
+				'bootstrap-css' => 'css',
+				'fontawesome' => 'css',
+				'style-css'  => 'css'
+			),
+		),
 
-		'title' => 'Teste de leitura de xml',
+		'body_end' => array(
 
-		'description' => 'A pagina deve importar e ler xml',
-
-		'include' => array(
-			$settings['dir']['form'].'/form.basic.html'
+			'script' => array( 
+				'jquery' => 'script',
+				'bootstrap-js' => 'script',
+				'coffee' => 'script',
+				'less' => 'script',
+				'app-coffee' => 'script-coffee'
+			)
 		)
 	);
 
+	# CONFIGURA CONJUNTO DE PÁGINAS
 
-	$settings['page']['app-vg'] = array(
+	# # # # # /APP NATIVO/ # # # # #
+	# # Configura pagina de tratamento
+	$settings['page']['xml'] = $settings['default']['html'];
 
-		'title' => 'Educação e Novas Tecnologias para o Ensino',
-
-		'description' => 'Aplicativo modelo da VG',
-
-		'include' => array(
-			$settings['dir']['app-vg'].'/index.html'
-		)
+	# # # Adiciona configurações extras
+	$settings['page']['xml']['head']['title'] = 'Teste de leitura de xml';
+	$settings['page']['xml']['head']['meta']['description'] = 'Pagina para teste';
+	$settings['page']['xml']['head']['style']['style-less'] = 'less';
+	$settings['page']['xml']['include'] = array(
+		$settings['dir']['form'].'/form.basic.html'
 	);
 
+	# # # Remove configurações desnecessarias
+	unset($settings['page']['xml']['head']['style']['style-css']);
+	# # # # # /APP NATIVO/ # # # # #
 
+
+
+	# # # # # / APP VG / # # # # #
+	$settings['page']['app-vg'] = $settings['default']['html'];
+
+	# # # Adiciona configurações extras
+	$settings['page']['app-vg']['head']['title'] = 'Educação e Novas Tecnologias para o Ensino';
+	$settings['page']['app-vg']['head']['meta']['description'] = 'Aplicativo modelo da VG';
+	$settings['page']['app-vg']['head']['style']['app-vg-style-css'] = 'css';
+	$settings['page']['app-vg']['body_end']['script']['app-vg-app-coffee'] = 'css';
+	$settings['page']['app-vg']['include'] = array(
+		$settings['dir']['app-vg'].'/index.html'
+	);
+
+	# # # Remove configurações desnecessarias
+	unset($settings['page']['app-vg']['head']['style']['style-css'], $settings['page']['app-vg']['body_end']['script']['app-js'], $settings['page']['app-vg']['body_end']['script']['less']);
+	# # # # # / APP VG / # # # # #
 ?>

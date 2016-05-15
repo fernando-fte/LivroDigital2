@@ -70,7 +70,11 @@
 		switch ($post['type']) {
 
 			case 'title':
-				$result = '<title>'.path_relative($GLOBALS['settings']['page'][$post['content']]['title'])['done'].'</title>';
+				$result = '<title>'.$post['content'].'</title>';
+				break;
+
+			case 'meta':
+				$result = '<meta '.$post['content'].'>';
 				break;
 
 			case 'css':
@@ -98,101 +102,229 @@
 	}
 
 	# # # \ CONTRUÇÃO DO HTML \ # # #
-	function construct_html_required ($post) {
-		// $post = text //recebe o tipo de arquivo a ser montado
-
-		$temp['construct'] = false;
-
-		// Monta HEADER
-		if ($post == 'head') {
-
-			$temp['construct'] .= "\n\t<head>";
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$GLOBALS['get']['page']));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'bootstrap-css'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'fontawesome'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'css', 'content'=>'style-css'));
-			$temp['construct'] .= "\n\t</head>";
-			$temp['construct'] .= "\n";
-		}
-
-		// Monta scripts
-		if ($post == 'script') {
-
-			$temp['construct'] .= "\n";
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'jquery'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'coffee'));
-			// $temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'less'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script', 'content'=>'bootstrap-js'));
-			$temp['construct'] .= "\n\t\t".html_required(array('type'=>'script-coffee', 'content'=>'app-coffee'));
-			$temp['construct'] .= "\n";
-		}
-
-		// Adiciona para return
-		$return = $temp['construct'];
-
-		// Imprime solicitação
-		echo $return;
-	}
-
-	# # # \ INCLUSAO DE PAGINAS COMPLETAS \ # # #
-	function construct_page_required ($post) {
-
-		// DECLARA INSTANCIAS DO RESULTADO
+	function construct_page_required ($page, $content) {
+		# DECLARA INSTANCIAS DO RESULTADO
 		$result = array(
 			'success' => null,
 			'erro' => null,
-			'this' => 'F::construct_page_required',
+			'done' => null,
+			'this' => 'F::construct_html_required',
 			'process' => array (
-				'inicia' => array (
-					'success' => true
-				),
-				'include' => array (
-					'success' => null
-				)
+				'inicia page' => false,
+				'inicia content' => false,
+				'@help' => false,
+				'valida page' => array('success' => true),
+				'valida content' => array('success' => true)
 			)
 		);
 
-		# # # Valida se existe o conjunto de infomações
-		if (array_key_exists($post, $GLOBALS['settings']['page'])) {
+		# VALIDAÇÃO INICIAL
+		# # Valida se está sendo recebido $page
+		if ($page != '') { $result['process']['inicia page'] = true;}
 
-			$me = $GLOBALS['settings']['page'][$post];
+		# # Valida se esta sendo recebido contents
+		if ($content != '') { $result['process']['inicia content'] = true;}
+		# # # caso content seja vazio preenche como "include"
+		else { $content = 'include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de "include"'; }
 
-			# # # Valida se existe includes
-			if (array_key_exists('include', $me) == true || count($me['include']) > 0) {
+		# # Valida se foi solicitado os solicitadoress
+		if ($result['process']['inicia page'] == false ){ $result['process']['@help'] = true; }
+		# # # // # # # #
 
-				// echo  'ok';
+		# CONFIGURA HELP
+		if ($result['process']['@help'] == true) {
 
-				# # # Navega em cada valor a ser incluido
-				for ($i=0; $i < count($me['include']); $i++) { 
+			$result['erro'] = true;
+			$result['done'] = 'A função esta esperando dois valores "$page e $content", $page para a pagina a ser tratada e $content para o tipo de valor a ser retornado, podendo ser "head, script, include" caso vazio ele apenas retornará "include"';
+		}
+		# # # // # # # #
 
-					# # # inclui cada item da biblioteca
-					include path_relative($me['include'][$i])['done'];
+		# VALIDA SE EXISTE OS ELEMENTOS SOLICITADOS
+		if ($result['process']['inicia page'] == true) {
 
-					$result['process']['include']['log'][$i] = path_relative($me['include'][$i])['done'];
+			# # caso nao exista a pagina listada
+			if (!array_key_exists($page, $GLOBALS['settings']['page'])) {
+
+				$result['process']['valida page']['success'] = false;
+				$result['process']['valida page']['motivo'] = 'Não foi declarada a página "'.$page.'" nas configurações';
+				$result['success'] = false;
+				$result['erro'] = $result['process']['valida page']['motivo'];
+			}
+
+			# # valida se na pagina declara o content existe
+			if ($result['process']['valida page']['success'] == true) {
+
+				# # caso nao exista o content listado
+				if (!array_key_exists($content, $GLOBALS['settings']['page'][$page])) {
+
+					$result['process']['valida page']['success'] = false;
+					$result['process']['valida page']['motivo'] = 'Não foi declarado "'.$content.'" em "'.$page.'"';
+					$result['success'] = false;
+					$result['erro'] = $result['process']['valida page']['motivo'];
 				}
 
-				$result['success'] = true;
+				# # declara success para iniciar todas as outras tarefas
+				else { $result['success'] = true; }
+			}
+		}
+		# # # // # # # #
+
+		# INICIA TRATAMENTO PARA OS CONTENTS
+		if ($result['success'] != false) {
+
+			# seleciona apenas os itens a setem tratados
+			$me = $GLOBALS['settings']['page'][$page][$content];
+
+			# Monta estrutura para HEAD
+			if ($content == 'head') {
+
+				# # Inicia head
+				$temp['construct'] .= "\n\t<head>";
+
+				# # # Monta cada meta-tag
+				if (array_key_exists('meta', $me)) {
+					
+					# # # # Seleciona cada meta-tag
+					foreach ($me['meta'] as $key => $val) {
+
+						# # # # # Valida se é um conjunto de metas do tipo configruação
+						if ($key == '@config') {
+
+							# # # # # # Seleciona cada item dentro de config
+							for ($i=0; $i < count($val); $i++) { 
+
+								# # # # # # Separa temp->meta para reservar o conjunto de atributos
+								$temp['meta'] = '';
+
+								# # # # # # Explode cada item na posição atual
+								foreach ($val[$i] as $key2 => $val2) {
+									$temp['meta'] .= '"'.$key2.'"="'.$val2.'" ';
+								}
+
+								# # # # # # adiona o a meta tag de configruação
+								$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>$temp['meta']));
+
+								unset($key2, $val2);
+							}
+
+							unset($i,$temp['meta']);
+						}
+
+						# # # # # valida se as meta são de indexação
+						else {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>'"name"="'.$key.'" "content"="'.$val.'"'));
+						}
+					}
+
+					unset($key, $val);
+				}
+				# # # //
+
+				# # # Adiciona title
+				$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$GLOBALS['settings']['page'][$page][$content]['title']));
+				# # # //
+
+				# # # Monta css
+				if (array_key_exists('style', $me)) {
+					foreach ($me['style'] as $key => $val) {
+
+						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+					}
+
+					unset($key, $val);
+				}
+				# # # //
+
+				# # # Monta script
+				if (array_key_exists('script', $me)) {
+					foreach ($me['script'] as $key => $val) {
+
+						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+					}
+
+					unset($key, $val);
+				}
+				# # # //
+
+				# # Fecha head
+				$temp['construct'] .= "\n\t</head>";
+				$temp['construct'] .= "\n";
+
+				# reserva os dados tratados em done
+				$result['done'] = $temp['construct'];
+
+				# imprime done
+				echo $result['done'];
+				
+				# apaga temp
+				unset($temp);
 			}
 
-			# # # Caso não exista includes
-			else {
-				$result['success'] = false;
-				$result['process']['include']['success'] = false;
-				$result['process']['include']['erro'] = 'Não foi descrito uma lista de inclusão para "'.$post.'"';
-				$result['erro'] = $result['process']['include']['erro'];
+			# Monta estrutura para BODY_END
+			if ($content == 'body_end') {
+
+				# Inicia 
+				$temp['construct'] .= "\n";
+
+				# # # Monta script
+				if (array_key_exists('script', $me)) {
+
+					foreach ($me['script'] as $key => $val) {
+
+						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+					}
+
+					unset($key, $val);
+				}
+				# # # //
+
+				# Fecha
+				$temp['construct'] .= "\n";
+
+				# reserva os dados tratados em done
+				$result['done'] = $temp['construct'];
+
+				# imprime done
+				echo $result['done'];
+				
+				# apaga temp
+				unset($temp);				
 			}
 
-			unset($me);
+			# Monta estrutura para INCLUDE
+			if ($content == 'include') {
+
+				# # # Valida se existe includes
+				if (count($me) > 0) {
+
+					# # # Navega em cada valor a ser incluido
+					for ($i=0; $i < count($me); $i++) { 
+
+						# # # inclui cada item da biblioteca
+						include path_relative($me[$i])['done'];
+
+						$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];
+					}
+
+					$result['success'] = true;
+				}
+
+				# # # Caso não exista includes
+				else {
+					$result['success'] = false;
+					$result['process']['include']['success'] = false;
+					$result['process']['include']['erro'] = 'Não foi descrito nem uma lista de inclusão em "'.$page.'"';
+					$result['erro'] = $result['process']['include']['erro'];
+				}
+
+				unset($me);
+			}
 		}
 
-		# # # caso não exista o conjunto de informações solicitadas
-		else {
-			$result['success'] = false;
-			$result['process']['inicia']['success'] = false;
-			$result['process']['inicia']['erro'] = 'Não foi declarado "'.$post.'"';
-			$result['erro'] = $result['process']['inicia']['erro'];
-		}
-
+		// Imprime solicitação
+		// print_r($result);
 		return $result;
 	}
+
 ?>
