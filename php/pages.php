@@ -327,4 +327,6 @@
 		return $result;
 	}
 
+	# # # # \ TRATA PARAMETROS DE NAVEGAÇÃO \ # # # #
+	
 ?>

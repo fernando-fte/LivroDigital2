@@ -112,20 +112,20 @@
 
 	# # # # # /APP NATIVO/ # # # # #
 	# # Configura pagina de tratamento
-	$settings['page']['xml'] = $settings['default']['html'];
+	$settings['page']['livros'] = $settings['default']['html'];
 
 	# # # Adiciona configurações extras
-	$settings['page']['xml']['head']['title'] = 'Teste de leitura de xml';
-	$settings['page']['xml']['head']['meta']['description'] = 'Pagina para teste';
-	$settings['page']['xml']['head']['style']['style-less'] = 'less';
-	$settings['page']['xml']['include'] = array(
-		$settings['dir']['form'].'/form.basic.html'
+	$settings['page']['livros']['head']['title'] = 'Teste de leitura de xml';
+	$settings['page']['livros']['head']['meta']['description'] = 'Pagina para teste';
+	$settings['page']['livros']['head']['style']['style-less'] = 'less';
+	$settings['page']['livros']['include'] = array(
+		$settings['dir']['form'].'/menu.html',
+		$settings['dir']['form'].'/list.livro.html'
 	);
 
 	# # # Remove configurações desnecessarias
-	unset($settings['page']['xml']['head']['style']['style-css']);
+	unset($settings['page']['livros']['head']['style']['style-css']);
 	# # # # # /APP NATIVO/ # # # # #
-
 
 
 	# # # # # / APP VG / # # # # #
