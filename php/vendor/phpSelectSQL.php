@@ -19,7 +19,7 @@ function query($post, $print){
 
     # # # #
     # Inclui as informações de conexão do valor
-    include '._.account.php';
+    include '.account.php';
     # Inclui as informações de conexão do valor
     # # # #
 
