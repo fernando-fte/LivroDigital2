@@ -326,7 +326,4 @@
 		// print_r($result);
 		return $result;
 	}
-
-	# # # # \ TRATA PARAMETROS DE NAVEGAÇÃO \ # # # #
-	
 ?>

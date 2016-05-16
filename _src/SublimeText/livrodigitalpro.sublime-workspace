@@ -516,22 +516,6 @@
 	"buffers":
 	[
 		{
-			"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
-			"settings":
-			{
-				"buffer_size": 384881,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
-			"settings":
-			{
-				"buffer_size": 2095,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"contents": "",
 			"settings":
 			{
@@ -597,16 +581,12 @@
 	},
 	"expanded_folders":
 	[
-		"/D/projeto/web/livrodigital",
-		"/D/projeto/web/livrodigital/aplicativos",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/img",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/scripts"
+		"/D/projeto/web/livrodigital"
 	],
 	"file_history":
 	[
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/marcacao_original.html",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tipografia.less",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/app/tabela.less",
@@ -732,8 +712,7 @@
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-iii.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-ii.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/metodologia-de-pesquisa-cientifica.html"
+		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica.html"
 	],
 	"find":
 	{
@@ -1050,68 +1029,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 384881,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								34591,
-								34591
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/projeto/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2095,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								946,
-								866
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 143.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1135,7 +1057,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1660,7 +1582,7 @@
 		[
 			[
 				"",
-				"D:\\projeto\\web\\vg\\livroDigital\\_src\\Sublime Text\\LivroDigital.processamento.sublime-project"
+				"D:\\fernando.fte\\Projetos\\web\\livrodigital\\_src\\SublimeText\\livrodigitalpro[casa].sublime-project"
 			]
 		],
 		"width": 380.0

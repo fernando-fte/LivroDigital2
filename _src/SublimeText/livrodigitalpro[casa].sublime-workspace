@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"SETT",
+				"settings"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"bo",
+				"body_end"
+			],
+			[
+				"const",
+				"construct"
+			],
+			[
+				"sc",
+				"script"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"tem",
+				"temp"
+			],
+			[
+				"sett",
+				"settings"
+			],
+			[
+				"is",
+				"is_a"
+			],
+			[
 				"remo",
 				"remove"
 			],
@@ -295,19 +331,23 @@
 	"expanded_folders":
 	[
 		"/D/fernando.fte/Projetos/web/livrodigital",
-		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria",
 		"/D/fernando.fte/Projetos/web/livrodigital/books",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form",
-		"/D/fernando.fte/Projetos/web/livrodigital/php"
+		"/D/fernando.fte/Projetos/web/livrodigital/php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor"
 	],
 	"file_history":
 	[
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/testes/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/.config.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/pages.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/index.php",
-		"/D/fernando.fte/Projetos/web/livrodigital/php/.config.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/list.livro.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/list.autor.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/form.menu.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/form.basic.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor/phpSelectSQL.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/testes/index.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/scripts/app.coffee",
@@ -321,7 +361,6 @@
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/functions.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/teste/teste_xml.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/index.php",
-		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor/phpSelectSQL.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/index.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/parse.book.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/login.php",
@@ -427,10 +466,7 @@
 		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/variables.less",
 		"/D/fernando.fte/Projetos/web/livroDigital/sources/menu-bar.src",
 		"/D/fernando.fte/Projetos/web/livroDigital/style/app.css",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/header.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/html_construct/index.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/estrutura/nav-bar.html",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/outros.less"
+		"/D/fernando.fte/Projetos/web/livroDigital/sources/header.src"
 	],
 	"find":
 	{
@@ -452,6 +488,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"APP NATIVO",
+			"xml",
+			"\"h5 ",
+			"<td>",
+			"h4",
+			"h3",
+			"1",
+			"construct_html_required",
+			"xml",
+			"$me['include']",
+			"array (",
+			"(",
+			"# # # # # ",
+			"# # # # ",
+			"//",
+			"valida content",
+			"valida page",
+			"INICIAL",
+			"//",
 			"''",
 			"meta",
 			"root",
@@ -560,26 +615,7 @@
 			"cor-red",
 			"@app-cor",
 			"-cor-",
-			".app-cor",
-			"-cor-",
-			"cor",
-			".cor-",
-			"padrao",
-			"padrao-preto",
-			"-fraco",
-			"-00",
-			"00",
-			"60",
-			".cor-padrao",
-			"cor-padrao",
-			"color-font-",
-			"padrao",
-			".bg-variant",
-			".text-emphasis-variant",
-			"@state-danger-text",
-			"font-",
-			"Fonts, Rows, ",
-			"Columns,"
+			".app-cor"
 		],
 		"highlight": true,
 		"in_selection": false,

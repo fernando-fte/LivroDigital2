@@ -8,7 +8,7 @@
 	error_reporting(0);
 
 	// Config page default
-	if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
+	// if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
 	if (!array_key_exists('page', $get)) { $get['page'] = 'home'; }
 
 
@@ -110,6 +110,10 @@
 
 	# CONFIGURA CONJUNTO DE PÁGINAS
 
+	# # # # # /HOME / # # # # #
+	$settings['page']['home'] = $settings['default']['html'];
+	# # # # # /HOME / # # # # #
+
 	# # # # # /APP NATIVO/ # # # # #
 	# # Configura pagina de tratamento
 	$settings['page']['livros'] = $settings['default']['html'];
@@ -125,6 +129,13 @@
 
 	# # # Remove configurações desnecessarias
 	unset($settings['page']['livros']['head']['style']['style-css']);
+
+	$settings['page']['autor'] = $settings['page']['livros'];
+	$settings['page']['autor']['include'] = array(
+		$settings['dir']['form'].'/menu.html',
+		$settings['dir']['form'].'/list.autor.html'
+	);
+
 	# # # # # /APP NATIVO/ # # # # #
 
 
