@@ -99,6 +99,4 @@
 		$settings['page']['app-vg']['body_end']['script']['less']
 	);
 	# # # # # / APP VG / # # # # #
-
-
 ?>
