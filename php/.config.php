@@ -31,6 +31,7 @@
 	$settings['dir']['app-script'] = $settings['wwwroot'].'/script'; // Configura seleção do servidor mais pasta local
 
 	# diretorio de paginas
+	$settings['dir']['php'] = $settings['wwwroot'].'/php'; // Local base de todos os dados
 	$settings['dir']['contents'] = $settings['wwwroot'].'/contents'; // Local base de todos os dados
 	$settings['dir']['form'] = $settings['dir']['contents'].'/form'; // Conjunto de  formuláros
 	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
@@ -70,88 +71,9 @@
 		# # # #
 	);
 
-	// -- TODO: FAZER APLICATIVO PARA PAGES CARREGAR O HEADER DINAMICO
+	// Inclui configuração de paginas
+	include '.pages.php';
 
-	# # Define falores default do html
-	$settings['default']['html'] = array(
-		'head' => array(
-			'meta' => array(
-				'@config' => array(
-					array('charset'=>'utf-8'),
-					array('http-equiv'=>'X-UA-Compatible', 'content'=>'IE=edge'),
-					array('name'=>'viewport', 'content'=>'width=device-width, initial-scale=1')
-				),
-				'description' => null,
-				'keywords' => null,
-				'author' => 'FTE Developer by VG Consultoria'
-			),
-
-			'title' => null,
-
-			'style' => array(
-				// name-path-file => type-file-include
-				'bootstrap-css' => 'css',
-				'fontawesome' => 'css',
-				'style-css'  => 'css'
-			),
-		),
-
-		'body_end' => array(
-
-			'script' => array( 
-				'jquery' => 'script',
-				'bootstrap-js' => 'script',
-				'coffee' => 'script',
-				'less' => 'script',
-				'app-coffee' => 'script-coffee'
-			)
-		)
-	);
-
-	# CONFIGURA CONJUNTO DE PÁGINAS
-
-	# # # # # /HOME / # # # # #
-	$settings['page']['home'] = $settings['default']['html'];
-	# # # # # /HOME / # # # # #
-
-	# # # # # /APP NATIVO/ # # # # #
-	# # Configura pagina de tratamento
-	$settings['page']['livros'] = $settings['default']['html'];
-
-	# # # Adiciona configurações extras
-	$settings['page']['livros']['head']['title'] = 'Teste de leitura de xml';
-	$settings['page']['livros']['head']['meta']['description'] = 'Pagina para teste';
-	$settings['page']['livros']['head']['style']['style-less'] = 'less';
-	$settings['page']['livros']['include'] = array(
-		$settings['dir']['form'].'/menu.html',
-		$settings['dir']['form'].'/list.livro.html'
-	);
-
-	# # # Remove configurações desnecessarias
-	unset($settings['page']['livros']['head']['style']['style-css']);
-
-	$settings['page']['autor'] = $settings['page']['livros'];
-	$settings['page']['autor']['include'] = array(
-		$settings['dir']['form'].'/menu.html',
-		$settings['dir']['form'].'/list.autor.html'
-	);
-
-	# # # # # /APP NATIVO/ # # # # #
-
-
-	# # # # # / APP VG / # # # # #
-	$settings['page']['app-vg'] = $settings['default']['html'];
-
-	# # # Adiciona configurações extras
-	$settings['page']['app-vg']['head']['title'] = 'Educação e Novas Tecnologias para o Ensino';
-	$settings['page']['app-vg']['head']['meta']['description'] = 'Aplicativo modelo da VG';
-	$settings['page']['app-vg']['head']['style']['app-vg-style-css'] = 'css';
-	$settings['page']['app-vg']['body_end']['script']['app-vg-app-coffee'] = 'css';
-	$settings['page']['app-vg']['include'] = array(
-		$settings['dir']['app-vg'].'/index.html'
-	);
-
-	# # # Remove configurações desnecessarias
-	unset($settings['page']['app-vg']['head']['style']['style-css'], $settings['page']['app-vg']['body_end']['script']['app-js'], $settings['page']['app-vg']['body_end']['script']['less']);
-	# # # # # / APP VG / # # # # #
+	// Inclui conjuntos de função para configurações
+	include '.functions.php';
 ?>
