@@ -30,7 +30,7 @@
 						'author' => 'FTE Developer by VG Consultoria'
 					),
 
-					'@title' => null,
+					'@title' => 'Home',
 
 					'@style' => array(
 						// name-path-file => type-file-include
@@ -56,6 +56,7 @@
 				'@no_default' => array('@head->style'),
 				'@default' => array(
 					'@head' => array(
+						'@title' => 'ADM',
 						'@style' => array(
 							// name-path-file => type-file-include
 							'bootstrap-css' => 'css',
@@ -66,6 +67,10 @@
 				),
 
 				'login' => array(
+					'@head' => array(
+						'@title' => 'Login',
+					),
+
 					'@include' => array(
 						'incluir_pagina_x',
 						'incluir_pagina_y'
@@ -103,7 +108,9 @@
 						'@default' => null
 					)
 				),
-				'no_default' => array('success' => null)
+				'no_default' => array('success' => null),
+				'inicia content' => false,
+				'valida content' => array('success' => true)
 			)
 		);
 
@@ -271,12 +278,22 @@
 				$result['process']['default']['success'] = true;
 
 				# # # Mescla com o default reservado
-				$reserve['@default'] = array_merge_recursive($me['@default'], $reserve['@default']);
+				$reserve['@default'] = array_replace_recursive($reserve['@default'], $me['@default']);
 			}
 			# # / VALIDA SE EXISTE DEFAULT / # #
 			# # # # # / MONTA DEFAULT / # # # # # #
 
 			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
+
+			# # valida se é uma solicitação da função
+			if ($result['this'] == 'me') {
+
+				$result['done']['@default'] = $reserve['@default'];
+				$result['done']['@pages'] = $reserve['@pages'];
+				$result['success'] = true;
+			}
+
+			# # Solicita sub-valor
 			if (count($page) > 1) {
 
 				# Decalra processo de sub pastas
@@ -299,27 +316,30 @@
 
 				unset($temp);
 			}
-
-			# valida se é uma solicitação da função
-			if ($result['this'] == 'me') {
-				
-				$result['done']['@default'] = $reserve['@default'];
-				$result['done']['@pages'] = $me;
-				$result['success'] = true;
-			}
 			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
-
 
 			# Define o inicio do tratamento dos elementos para essa pagina
 			if ($result['this'] == 'F::page_config') {
-				
+
 				# # Valida o inicio dos tratamentos
 				$result['process']['inicia']['success'] = true;
 
-				$result['process']['inicia']['log']['@page'] = $me;
+				# # Guarda em log o valor de reserve
+				$result['process']['inicia']['log']['@page'] = $reserve['@pages'];
+
+				# # Trata os dados recebidos e mescla com os dados default
+				// $reserve['@default']['@head'] = 
+
+				// TODO :  MESCLAR DADOS COM O DEFAULT
+
+				print_r($reserve['@pages']);
+				print_r($reserve['@default']);
+
 				$result['process']['inicia']['log']['@default'] = $reserve['@default'];
 			}
 		}
+
+		unset($me);
 		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
 
 
@@ -327,22 +347,170 @@
 		# # / INICIA OS TRATAMENTOS DOS ELEMENTOS/ # #
 		if ($result['process']['inicia']['success'] == true) {
 
-			// print_r($result['process']['inicia']);
 
 			# # Valida se é recebido content
 			if ($content == true) {
 
-				# # Valida se foi recebido algum desses argumentos e transforma
-				if ($content == 'head' || $content == 'body_end' || $content == 'include') {
-					
-					switch ($content) {
-						case 'head': $content = '@head'; break;
-						case 'head': $content = '@head'; break;
-						case 'head': $content = '@head'; break;
-						default:
-							# code...
-							break;
+				# # Modifica as condições recebidas caso contrario usa o include
+				switch ($content) {
+					case 'head': $content = '@head'; break;
+					case 'body_end': $content = '@body_end'; break;
+					case 'include': $content = '@include'; break;
+				}
+
+				# # Valida se esta sendo recebido contents
+				if ($content != '') { $result['process']['inicia content'] = true;}
+				# # # caso content seja vazio preenche como "include"
+				else { $content = '@include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de "include"'; }
+
+				# seleciona apenas os itens a setem tratados
+				$me = $result['process']['inicia']['log']['@default'][$content];
+
+
+				# Monta estrutura para HEAD
+				if ($content == '@head') {
+
+					# # Inicia head
+					$temp['construct'] .= "\n\t<head>";
+
+					# # # Monta cada meta-tag
+					if (array_key_exists('@meta', $me)) {
+						
+						# # # # Seleciona cada meta-tag
+						foreach ($me['meta'] as $key => $val) {
+
+							# # # # # Valida se é um conjunto de metas do tipo configruação
+							if ($key == '@config') {
+
+								# # # # # # Seleciona cada item dentro de config
+								for ($i=0; $i < count($val); $i++) { 
+
+									# # # # # # Separa temp->meta para reservar o conjunto de atributos
+									$temp['meta'] = '';
+
+									# # # # # # Explode cada item na posição atual
+									foreach ($val[$i] as $key2 => $val2) {
+										$temp['meta'] .= '"'.$key2.'"="'.$val2.'" ';
+									}
+
+									# # # # # # adiona o a meta tag de configruação
+									$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>$temp['meta']));
+
+									unset($key2, $val2);
+								}
+
+								unset($i,$temp['meta']);
+							}
+
+							# # # # # valida se as meta são de indexação
+							else {
+
+								$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>'"name"="'.$key.'" "content"="'.$val.'"'));
+							}
+						}
+
+						unset($key, $val);
 					}
+					# # # //
+
+					# # # Adiciona title
+					$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$me['@title']));
+					# # # //
+
+					# # # Monta css
+					if (array_key_exists('@style', $me)) {
+						foreach ($me['@style'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# # # Monta script
+					if (array_key_exists('@script', $me)) {
+						foreach ($me['@script'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# # Fecha head
+					$temp['construct'] .= "\n\t</head>";
+					$temp['construct'] .= "\n";
+
+					# reserva os dados tratados em done
+					$result['done'] = $temp['construct'];
+
+					# imprime done
+					echo $result['done'];
+					
+					# apaga temp
+					unset($temp);
+				}
+
+				# Monta estrutura para BODY_END
+				if ($content == '@body_end') {
+
+					# Inicia 
+					$temp['construct'] .= "\n";
+
+					# # # Monta script
+					if (array_key_exists('@script', $me)) {
+
+						foreach ($me['@script'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# Fecha
+					$temp['construct'] .= "\n";
+
+					# reserva os dados tratados em done
+					$result['done'] = $temp['construct'];
+
+					# imprime done
+					echo $result['done'];
+					
+					# apaga temp
+					unset($temp);				
+				}
+
+				# Monta estrutura para INCLUDE
+				if ($content == '@include') {
+
+					# # # Valida se existe includes
+					if (count($me) > 0) {
+
+						# # # Navega em cada valor a ser incluido
+						for ($i=0; $i < count($me); $i++) { 
+
+							# # # inclui cada item da biblioteca
+							include path_relative($me[$i])['done'];
+
+							$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];
+						}
+
+						$result['success'] = true;
+					}
+
+					# # # Caso não exista includes
+					else {
+						$result['success'] = false;
+						$result['process']['include']['success'] = false;
+						$result['process']['include']['erro'] = 'Não foi descrito nem uma lista de inclusão em "'.$page[0].'"';
+						$result['erro'] = $result['process']['include']['erro'];
+					}
+
+					unset($me);
 				}
 			}
 
@@ -361,6 +529,6 @@
 	}
 
 	// page_config(array('adm'));
-	page_config(array('adm'), false);
+	page_config(array('adm', 'login'), 'head');
 
 ?>
