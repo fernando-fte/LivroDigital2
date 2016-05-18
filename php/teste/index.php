@@ -9,8 +9,6 @@
 		@include // define uma lista de importação de elementos
 	*/
 
-
-
 	# # # # # / FUNÇÂO DE TARTAMENTO DE PAGINAS / # # # # #
 	function page_config($page, $content, $func) {
 
@@ -72,8 +70,7 @@
 					),
 
 					'@include' => array(
-						'incluir_pagina_x',
-						'incluir_pagina_y'
+						$GLOBALS['settings']['dir']['php'].'/teste/include_teste.php'
 					),
 
 					'erro' => array(
@@ -186,6 +183,7 @@
 			$result['process']['@help'] = true;
 		}
 		# # # # # / VALIDAÇÃO / # # # # # #
+
 
 
 		# # # # # / TRATA HELP / # # # # # #
@@ -318,28 +316,42 @@
 			}
 			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
 
-			# Define o inicio do tratamento dos elementos para essa pagina
+			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
 			if ($result['this'] == 'F::page_config') {
 
 				# # Valida o inicio dos tratamentos
 				$result['process']['inicia']['success'] = true;
 
-				# # Guarda em log o valor de reserve
-				$result['process']['inicia']['log']['@page'] = $reserve['@pages'];
+				# # Mescla parametros da pagina con default
+				# # # Cria lista pra validação
+				$temp['list'] = array('@head', '@body_end', '@include');
 
-				# # Trata os dados recebidos e mescla com os dados default
-				// $reserve['@default']['@head'] = 
+				// print_r($reserve['@pages']);
+				// print_r($reserve['@default']);
 
-				// TODO :  MESCLAR DADOS COM O DEFAULT
+				# # # Inicia loop para selecionar cada tipo de item
+				for ($i=0; $i < count($temp['list']); $i++) { 
 
-				print_r($reserve['@pages']);
-				print_r($reserve['@default']);
+					// $reserve['@default']['@include'] = array();
 
-				$result['process']['inicia']['log']['@default'] = $reserve['@default'];
+					# # # # Valida se existe as condições na pagina
+					if (array_key_exists($temp['list'][$i], $reserve['@pages'])) {
+
+						# # # # # Adiciona o elemento em default se nao existe
+						if (!array_key_exists($temp['list'][$i], $reserve['@default'])) {
+							$reserve['@default'][$temp['list'][$i]] = array();
+						}
+
+						# # # # # Subistitui o reserve->default pelos parametros da pagina
+						$reserve['@default'][$temp['list'][$i]] = array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]);
+					}
+				}
+				unset($temp, $i); // Paga os valores utilizados
 			}
+			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
 		}
 
-		unset($me);
+		unset($me); // Apaga os parametros usados temposariamente
 		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
 
 
@@ -348,7 +360,7 @@
 		if ($result['process']['inicia']['success'] == true) {
 
 
-			# # Valida se é recebido content
+			# # Valida se é recebido um content
 			if ($content == true) {
 
 				# # Modifica as condições recebidas caso contrario usa o include
@@ -364,8 +376,7 @@
 				else { $content = '@include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de "include"'; }
 
 				# seleciona apenas os itens a setem tratados
-				$me = $result['process']['inicia']['log']['@default'][$content];
-
+				$me = $reserve['@default'][$content];
 
 				# Monta estrutura para HEAD
 				if ($content == '@head') {
@@ -377,7 +388,7 @@
 					if (array_key_exists('@meta', $me)) {
 						
 						# # # # Seleciona cada meta-tag
-						foreach ($me['meta'] as $key => $val) {
+						foreach ($me['@meta'] as $key => $val) {
 
 							# # # # # Valida se é um conjunto de metas do tipo configruação
 							if ($key == '@config') {
@@ -448,7 +459,7 @@
 
 					# imprime done
 					echo $result['done'];
-					
+
 					# apaga temp
 					unset($temp);
 				}
@@ -479,9 +490,9 @@
 
 					# imprime done
 					echo $result['done'];
-					
+
 					# apaga temp
-					unset($temp);				
+					unset($temp);
 				}
 
 				# Monta estrutura para INCLUDE
@@ -513,7 +524,6 @@
 					unset($me);
 				}
 			}
-
 		}
 		# # / INICIA OS TRATAMENTOS DOS ELEMENTOS/ # #
 
@@ -528,7 +538,7 @@
 		return $result;
 	}
 
-	// page_config(array('adm'));
-	page_config(array('adm', 'login'), 'head');
+	// page_config(array('adm', 'login'), 'body_end');
 
+	print_r($temp)
 ?>
