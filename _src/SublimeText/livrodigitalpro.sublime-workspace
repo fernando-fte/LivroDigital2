@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"arra",
+				"array"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"body",
+				"body_end"
+			],
+			[
+				"arrayreplace",
+				"array_replace_recursive"
+			],
+			[
 				"replace",
 				"array_replace_recursive"
 			],
@@ -22,10 +38,6 @@
 			[
 				"array",
 				"array_reduce"
-			],
-			[
-				"arra",
-				"array_diff"
 			],
 			[
 				"UNSE",
@@ -328,10 +340,6 @@
 				"getcwd"
 			],
 			[
-				"json",
-				"json_encode"
-			],
-			[
 				"file_",
 				"file_open"
 			],
@@ -506,51 +514,11 @@
 			[
 				"els",
 				"else"
-			],
-			[
-				"el",
-				"else"
-			],
-			[
-				"su",
-				"success"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/projeto/web/livrodigital/php/teste/index.php",
-			"settings":
-			{
-				"buffer_size": 14443,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projeto/web/livrodigital/php/.config.php",
-			"settings":
-			{
-				"buffer_size": 3279,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/projeto/web/livrodigital/php/.functions.php",
-			"settings":
-			{
-				"buffer_size": 9014,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "			if ($content == true) {\n\n				# # Modifica as condições recebidas caso contrario usa o include\n				switch ($content) {\n					case 'head': $content = '@head'; break;\n					case 'body_end': $content = '@body_end'; break;\n					case 'include': $content = '@include'; break;\n				}\n\n				# # Valida se esta sendo recebido contents\n				if ($content != '') { $result['process']['inicia content'] = true;}\n				# # # caso content seja vazio preenche como \"include\"\n				else { $content = '@include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de \"include\"'; }\n\n				# seleciona apenas os itens a setem tratados\n				$me = $result['process']['inicia']['log']['@page'][$content];\n\n				# Monta estrutura para HEAD\n				if ($content == '@head') {\n\n					# # Inicia head\n					$temp['construct'] .= \"\\n\\t<head>\";\n\n					# # # Monta cada meta-tag\n					if (array_key_exists('@meta', $me)) {\n						\n						# # # # Seleciona cada meta-tag\n						foreach ($me['meta'] as $key => $val) {\n\n							# # # # # Valida se é um conjunto de metas do tipo configruação\n							if ($key == '@config') {\n\n								# # # # # # Seleciona cada item dentro de config\n								for ($i=0; $i < count($val); $i++) { \n\n									# # # # # # Separa temp->meta para reservar o conjunto de atributos\n									$temp['meta'] = '';\n\n									# # # # # # Explode cada item na posição atual\n									foreach ($val[$i] as $key2 => $val2) {\n										$temp['meta'] .= '\"'.$key2.'\"=\"'.$val2.'\" ';\n									}\n\n									# # # # # # adiona o a meta tag de configruação\n									$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>'meta', 'content'=>$temp['meta']));\n\n									unset($key2, $val2);\n								}\n\n								unset($i,$temp['meta']);\n							}\n\n							# # # # # valida se as meta são de indexação\n							else {\n\n								$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>'meta', 'content'=>'\"name\"=\"'.$key.'\" \"content\"=\"'.$val.'\"'));\n							}\n						}\n\n						unset($key, $val);\n					}\n					# # # //\n\n					# # # Adiciona title\n					$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>'title', 'content'=>$GLOBALS['settings']['page'][$page][$content]['title']));\n					# # # //\n\n					# # # Monta css\n					if (array_key_exists('@style', $me)) {\n						foreach ($me['@style'] as $key => $val) {\n\n							$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>$val, 'content'=>$key));\n						}\n\n						unset($key, $val);\n					}\n					# # # //\n\n					# # # Monta script\n					if (array_key_exists('@script', $me)) {\n						foreach ($me['@script'] as $key => $val) {\n\n							$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>$val, 'content'=>$key));\n						}\n\n						unset($key, $val);\n					}\n					# # # //\n\n					# # Fecha head\n					$temp['construct'] .= \"\\n\\t</head>\";\n					$temp['construct'] .= \"\\n\";\n\n					# reserva os dados tratados em done\n					$result['done'] = $temp['construct'];\n\n					# imprime done\n					echo $result['done'];\n					\n					# apaga temp\n					unset($temp);\n				}\n\n				# Monta estrutura para BODY_END\n				if ($content == '@body_end') {\n\n					# Inicia \n					$temp['construct'] .= \"\\n\";\n\n					# # # Monta script\n					if (array_key_exists('@script', $me)) {\n\n						foreach ($me['@script'] as $key => $val) {\n\n							$temp['construct'] .= \"\\n\\t\\t\".html_required(array('type'=>$val, 'content'=>$key));\n						}\n\n						unset($key, $val);\n					}\n					# # # //\n\n					# Fecha\n					$temp['construct'] .= \"\\n\";\n\n					# reserva os dados tratados em done\n					$result['done'] = $temp['construct'];\n\n					# imprime done\n					echo $result['done'];\n					\n					# apaga temp\n					unset($temp);				\n				}\n\n				# Monta estrutura para INCLUDE\n				if ($content == '@include') {\n\n					# # # Valida se existe includes\n					if (count($me) > 0) {\n\n						# # # Navega em cada valor a ser incluido\n						for ($i=0; $i < count($me); $i++) { \n\n							# # # inclui cada item da biblioteca\n							include path_relative($me[$i])['done'];\n\n							$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];\n						}\n\n						$result['success'] = true;\n					}\n\n					# # # Caso não exista includes\n					else {\n						$result['success'] = false;\n						$result['process']['include']['success'] = false;\n						$result['process']['include']['erro'] = 'Não foi descrito nem uma lista de inclusão em \"'.$page[0].'\"';\n						$result['erro'] = $result['process']['include']['erro'];\n					}\n\n					unset($me);\n				}\n			}",
-			"settings":
-			{
-				"buffer_size": 4439,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -612,20 +580,25 @@
 		"/D/projeto/web/livrodigital",
 		"/D/projeto/web/livrodigital/_src",
 		"/D/projeto/web/livrodigital/_src/SublimeText",
+		"/D/projeto/web/livrodigital/contents",
+		"/D/projeto/web/livrodigital/contents/form",
+		"/D/projeto/web/livrodigital/contents/home",
 		"/D/projeto/web/livrodigital/php",
-		"/D/projeto/web/livrodigital/php/teste",
 		"/D/projeto/web/livrodigital/php/vendor"
 	],
 	"file_history":
 	[
-		"/D/projeto/web/livrodigital/php/.pages.php",
 		"/D/projeto/web/livrodigital/php/.functions.php",
-		"/D/projeto/web/livrodigital/php/teste/index.php",
-		"/D/projeto/web/livrodigital/php/.config.php",
+		"/D/projeto/web/livrodigital/php/.pages.php",
 		"/D/projeto/web/livrodigital/index.php",
+		"/D/projeto/web/livrodigital/contents/form/menu.html",
+		"/D/projeto/web/livrodigital/php/index.php",
+		"/D/projeto/web/livrodigital/php/.config.php",
+		"/D/projeto/web/livrodigital/php/teste/index.php",
+		"/D/projeto/web/livrodigital/contents/home/abertura.html",
+		"/D/projeto/web/livrodigital/php/teste/include_teste.php",
 		"/D/projeto/web/livrodigital/.htaccess",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/.htaccess",
-		"/D/projeto/web/livrodigital/php/index.php",
 		"/D/projeto/web/livrodigital/php/.config.pages.php",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/index 2.html",
@@ -742,10 +715,7 @@
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-iii.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-ii.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/educacao-e-novas-tecnologias-para-o-ensino.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/educacao-e-novas-tecnologias-para-o-ensino [tabela].html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing.html"
+		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino.html"
 	],
 	"find":
 	{
@@ -789,6 +759,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"page_config",
+			"$GLOBALS['settings']",
+			", $func",
+			"$settings['pages']",
+			"$settings",
+			"  ",
+			"settings",
+			"$settings['pages']",
+			");\n",
+			"'@head'",
+			"@head",
 			"array_merge_recursive",
 			"'meta'",
 			"'script'",
@@ -905,18 +886,7 @@
 			"[text]",
 			"[text",
 			"<ol",
-			"letra",
-			"number",
-			"	",
-			"    ",
-			"<!",
-			"⊂",
-			"Titulo = ",
-			" = ",
-			"https://drive.google.com/open?id=",
-			"Titulo = ",
-			" = ",
-			"transtornos-de-aprendizagem"
+			"letra"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -924,6 +894,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"construct_page_required",
 			"$page[0].",
 			"<p",
 			"library",
@@ -1050,8 +1021,7 @@
 			"\\t<p data-book-section-label=\"Diretor\">",
 			"\\t<p data-book-section-label=\"Gênero\">",
 			"\\t<p data-book-section-label=\"Nome do filme\">",
-			"<p data-book-section-label=\"Nome do filme\">",
-			"</div>"
+			"<p data-book-section-label=\"Nome do filme\">"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1062,124 +1032,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/projeto/web/livrodigital/php/teste/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14443,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9319,
-								9319
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2153.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/projeto/web/livrodigital/php/.config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3279,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								129,
-								129
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/projeto/web/livrodigital/php/.functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9014,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3426,
-								3426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								4439
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 34.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1231,6 +1085,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				".pages",
+				"php\\.pages.php"
+			],
 			[
 				"con",
 				"php\\.config.php"

@@ -539,6 +539,4 @@
 	}
 
 	// page_config(array('adm', 'login'), 'body_end');
-
-	print_r($temp)
 ?>

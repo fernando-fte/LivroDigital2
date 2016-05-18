@@ -102,228 +102,445 @@
 	}
 
 	# # # \ CONTRUÇÃO DO HTML \ # # #
-	function construct_page_required ($page, $content) {
+	function construct_page_required ($page, $content, $func) {
+
 		# DECLARA INSTANCIAS DO RESULTADO
 		$result = array(
 			'success' => null,
 			'erro' => null,
 			'done' => null,
-			'this' => 'F::construct_html_required',
+			'this' => 'F::construct_page_required',
 			'process' => array (
-				'inicia page' => false,
-				'inicia content' => false,
+				'valida-page' => false,
 				'@help' => false,
-				'valida page' => array('success' => true),
+				'inicia' => array(
+					'success' => null,
+					'log' => array(
+						'@page' => null,
+						'@default' => null
+					)
+				),
+				'no_default' => array('success' => null),
+				'inicia content' => false,
 				'valida content' => array('success' => true)
 			)
 		);
 
-		# VALIDAÇÃO INICIAL
-		# # Valida se está sendo recebido $page
-		if ($page != '') { $result['process']['inicia page'] = true;}
+		# DECLARA INSTANCIAS DE RESERVA
+		$reserve = array(
+			'@default' => null,
+			'@pages' => null
+		);
 
-		# # Valida se esta sendo recebido contents
-		if ($content != '') { $result['process']['inicia content'] = true;}
-		# # # caso content seja vazio preenche como "include"
-		else { $content = 'include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de "include"'; }
 
-		# # Valida se foi solicitado os solicitadoress
-		if ($result['process']['inicia page'] == false ){ $result['process']['@help'] = true; }
-		# # # // # # # #
+		# # # # # / VALIDAÇÃO / # # # # # #
+		# Valida se esta sendo recebido parametros da função
+		if ($func == true && gettype($func) == 'array') {
 
-		# CONFIGURA HELP
+			# # modifica nome da função para identificar como sub-item
+			$result['this'] = 'me';
+
+			# # reserva os dados enviador pela função
+			$reserve = $func;
+		}
+
+		# Valida se foi recebido a pagina
+		if ($page == true) {
+
+			# # valida se foi recebido uma lista direta
+			if (gettype($page) == 'string') {
+
+				# # # explode e separa as paginas
+				$page = explode('->', $page);
+
+				# # # define o processo de tratamento
+				$result['process']['trata-page-direct'] = true;
+			}
+
+			# # Valida os parametros sao uma array
+			if (gettype($page) == 'array') {
+
+				# # # valida se é uma sub chamada
+				if ($result['this'] == 'me') {
+
+					# # # valida se a pagina existe
+					if (array_key_exists($page[0], $reserve['@pages'])) {
+
+						# # # # valida se a pagina existe
+						$result['process']['valida-page'] = true;
+					}
+				}
+
+				# # # caso o parametro nao seja uma sub chamada
+				if ($result['this'] == 'F::construct_page_required') {
+
+					# # # valida se a pagina existe
+					if (array_key_exists($page[0], $GLOBALS['settings']['pages'])) {
+
+						# # # # valida se a pagina existe
+						$result['process']['valida-page'] = true;
+					}
+				}
+			}
+
+			# # Monta erro caso a pagina nao seja valida
+			if ($result['process']['valida-page'] == false) {
+
+				$result['erro'] = true;
+				$result['done'] = 'A pagina "'.$page[0].'" não esta listada nas configurações';
+			}
+		}
+
+		# # Valida se é um pedido de help
+		if ($page == false) {
+
+			# # # configura help
+			$result['process']['@help'] = true;
+		}
+		# # # # # / VALIDAÇÃO / # # # # # #
+
+
+
+		# # # # # / TRATA HELP / # # # # # #
+		# Declara o help para a chamada a da função
 		if ($result['process']['@help'] == true) {
 
-			$result['erro'] = true;
-			$result['done'] = 'A função esta esperando dois valores "$page e $content", $page para a pagina a ser tratada e $content para o tipo de valor a ser retornado, podendo ser "head, script, include" caso vazio ele apenas retornará "include"';
+			# # Decalra em done o help
+			$result['done'] = 'Esta sendo esperado ao menos um $page que pode ser uma lista array ou uma string com os valores separados por "->" assim "pagina->pagina2"';
 		}
-		# # # // # # # #
+		# # # # # / TRATA HELP / # # # # # #
 
-		# VALIDA SE EXISTE OS ELEMENTOS SOLICITADOS
-		if ($result['process']['inicia page'] == true) {
 
-			# # caso nao exista a pagina listada
-			if (!array_key_exists($page, $GLOBALS['settings']['page'])) {
 
-				$result['process']['valida page']['success'] = false;
-				$result['process']['valida page']['motivo'] = 'Não foi declarada a página "'.$page.'" nas configurações';
-				$result['success'] = false;
-				$result['erro'] = $result['process']['valida page']['motivo'];
+		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
+		if ($result['process']['valida-page'] == true) {
+
+			# # # # # / RESERVA OS DADOS DAS PAGINAS / # # # # # #
+			if ($result['this'] == 'F::construct_page_required') {
+				$reserve['@pages'] = $GLOBALS['settings']['pages'][$page[0]];
+				$reserve['@default'] = $GLOBALS['settings']['pages']['@default'];
 			}
+			if ($result['this'] == 'me') {
+				$reserve['@pages'] = $reserve['@pages'][$page[0]];
+				$reserve['@default'] = $reserve['@default'];
+			}
+			# # # # # / RESERVA OS DADOS DAS PAGINAS / # # # # # #
 
-			# # valida se na pagina declara o content existe
-			if ($result['process']['valida page']['success'] == true) {
+			# # # #
+			# reserva pagina na posição atual
+			$me = $reserve['@pages'];
+			# # # #
 
-				# # caso nao exista o content listado
-				if (!array_key_exists($content, $GLOBALS['settings']['page'][$page])) {
+			# # # # # / MONTA DEFAULT / # # # # # #
+			# # / TRATA REMOVE DEFAULT / # #
+			if (array_key_exists('@no_default', $me)) {
 
-					$result['process']['valida page']['success'] = false;
-					$result['process']['valida page']['motivo'] = 'Não foi declarado "'.$content.'" em "'.$page.'"';
-					$result['success'] = false;
-					$result['erro'] = $result['process']['valida page']['motivo'];
+				# # # Adiciona processo de remoção de default
+				$result['process']['no_default']['success'] = true;
+
+
+				# # / TRATA REMOVE DEFAULT / # #
+				# # # Valida se é preciso rezetar todos os dados
+				if (gettype($me['@no_default']) == 'boolean' && $me['@no_default'] == true) {
+
+					# # # # Apaga os dados de default
+					unset($reserve['@default']);
+
+					# # # # Acrecenta um alerta
+					$result['process']['no_default']['warning'][] = 'Foi resetado os dados de default da página "'.$page[0].'"';
 				}
 
-				# # declara success para iniciar todas as outras tarefas
-				else { $result['success'] = true; }
-			}
-		}
-		# # # // # # # #
+				# # # Valida se o default é parcial
+				if (gettype($me['@no_default']) == 'array') {
 
-		# INICIA TRATAMENTO PARA OS CONTENTS
-		if ($result['success'] != false) {
+					# # # Adiciona processo de remoção de default
+					$result['process']['no_default']['success'] = true;
 
-			# seleciona apenas os itens a setem tratados
-			$me = $GLOBALS['settings']['page'][$page][$content];
+					# # # # Seleciona todos os itens
+					for ($i=0; $i < count($me['@no_default']); $i++) { 
+						
+						# # # # # Trata cada instancia
+						switch ($me['@no_default'][$i]) {
 
-			# Monta estrutura para HEAD
-			if ($content == 'head') {
+							case '@head': unset($reserve['@default']['@head']); break;
+							case '@head->title': unset($reserve['@default']['@head']['@title']); break;
+							case '@head->meta': unset($reserve['@default']['@head']['@meta']); break;
+							case '@head->style': unset($reserve['@default']['@head']['@style']); break;
+							case '@head->script': unset($reserve['@default']['@head']['@script']); break;
 
-				# # Inicia head
-				$temp['construct'] .= "\n\t<head>";
+							case '@body_end': unset($reserve['@default']['@body_end']); break;
+							case '@body_end->style': unset($reserve['@default']['@body_end']['@style']); break;
+							case '@body_end->script': unset($reserve['@default']['@body_end']['@script']); break;
 
-				# # # Monta cada meta-tag
-				if (array_key_exists('meta', $me)) {
-					
-					# # # # Seleciona cada meta-tag
-					foreach ($me['meta'] as $key => $val) {
-
-						# # # # # Valida se é um conjunto de metas do tipo configruação
-						if ($key == '@config') {
-
-							# # # # # # Seleciona cada item dentro de config
-							for ($i=0; $i < count($val); $i++) { 
-
-								# # # # # # Separa temp->meta para reservar o conjunto de atributos
-								$temp['meta'] = '';
-
-								# # # # # # Explode cada item na posição atual
-								foreach ($val[$i] as $key2 => $val2) {
-									$temp['meta'] .= '"'.$key2.'"="'.$val2.'" ';
-								}
-
-								# # # # # # adiona o a meta tag de configruação
-								$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>$temp['meta']));
-
-								unset($key2, $val2);
-							}
-
-							unset($i,$temp['meta']);
+							case '@include': unset($reserve['@default']['@include']); break;
 						}
 
-						# # # # # valida se as meta são de indexação
-						else {
-
-							$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>'"name"="'.$key.'" "content"="'.$val.'"'));
-						}
+						# # # # Acrecenta um alerta
+						$result['process']['no_default']['warning'][] = 'Foi resetado o default "'.$me['@no_default'][$i].'" da página "'.$page[0].'"';
 					}
-
-					unset($key, $val);
+					unset($i);
 				}
-				# # # //
+			}
+			# # / TRATA REMOVE DEFAULT / # #
 
-				# # # Adiciona title
-				$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$GLOBALS['settings']['page'][$page][$content]['title']));
-				# # # //
 
-				# # # Monta css
-				if (array_key_exists('style', $me)) {
-					foreach ($me['style'] as $key => $val) {
-
-						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
-					}
-
-					unset($key, $val);
-				}
-				# # # //
-
-				# # # Monta script
-				if (array_key_exists('script', $me)) {
-					foreach ($me['script'] as $key => $val) {
-
-						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
-					}
-
-					unset($key, $val);
-				}
-				# # # //
-
-				# # Fecha head
-				$temp['construct'] .= "\n\t</head>";
-				$temp['construct'] .= "\n";
-
-				# reserva os dados tratados em done
-				$result['done'] = $temp['construct'];
-
-				# imprime done
-				echo $result['done'];
+			# # / VALIDA SE EXISTE DEFAULT / # #
+			if (array_key_exists('@default', $me)) {
 				
-				# apaga temp
+				# # # Adiciona processo de remoção de default
+				$result['process']['default']['success'] = true;
+
+				# # # Mescla com o default reservado
+				$reserve['@default'] = array_replace_recursive($reserve['@default'], $me['@default']);
+			}
+			# # / VALIDA SE EXISTE DEFAULT / # #
+			# # # # # / MONTA DEFAULT / # # # # # #
+
+			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
+
+			# # Solicita sub-valor
+			if (count($page) > 1) {
+
+				# Decalra processo de sub pastas
+				$result['process']['sub-pages']['success'] = true;
+
+
+				$temp['func']['@default'] = $reserve['@default'];
+				$temp['func']['@pages'] = $me;
+				$temp['page'] = $page;
+				array_shift($temp['page']);
+
+				$result['process']['sub-pages']['log'] = construct_page_required($temp['page'], null,$temp['func']);
+
+				# Caso o sucesso no processo
+				if ($result['process']['sub-pages']['log']['success'] == true) {
+
+					# define os valores
+					$reserve = $result['process']['sub-pages']['log']['done'];
+				}
 				unset($temp);
 			}
+			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
 
-			# Monta estrutura para BODY_END
-			if ($content == 'body_end') {
 
-				# Inicia 
-				$temp['construct'] .= "\n";
+			# # valida se é uma solicitação da função
+			if ($result['this'] == 'me') {
 
-				# # # Monta script
-				if (array_key_exists('script', $me)) {
-
-					foreach ($me['script'] as $key => $val) {
-
-						$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
-					}
-
-					unset($key, $val);
-				}
-				# # # //
-
-				# Fecha
-				$temp['construct'] .= "\n";
-
-				# reserva os dados tratados em done
-				$result['done'] = $temp['construct'];
-
-				# imprime done
-				echo $result['done'];
-				
-				# apaga temp
-				unset($temp);				
+				$result['done']['@default'] = $reserve['@default'];
+				$result['done']['@pages'] = $reserve['@pages'];
+				$result['success'] = true;
 			}
 
-			# Monta estrutura para INCLUDE
-			if ($content == 'include') {
+			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
+			if ($result['this'] == 'F::construct_page_required') {
 
-				# # # Valida se existe includes
-				if (count($me) > 0) {
+				# # Valida o inicio dos tratamentos
+				$result['process']['inicia']['success'] = true;
 
-					# # # Navega em cada valor a ser incluido
-					for ($i=0; $i < count($me); $i++) { 
+				# # Mescla parametros da pagina con default
+				# # # Cria lista pra validação
+				$temp['list'] = array('@head', '@body_end', '@include');
 
-						# # # inclui cada item da biblioteca
-						include path_relative($me[$i])['done'];
+				# # # Inicia loop para selecionar cada tipo de item
+				for ($i=0; $i < count($temp['list']); $i++) { 
 
-						$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];
+					# # # # Valida se existe as condições na pagina
+					if (array_key_exists($temp['list'][$i], $reserve['@pages'])) {
+
+						# # # # # Adiciona o elemento em default se nao existe
+						if (!array_key_exists($temp['list'][$i], $reserve['@default'])) {
+							$reserve['@default'][$temp['list'][$i]] = array();
+						}
+
+						# # # # # Subistitui o reserve->default pelos parametros da pagina
+						// $reserve['@default'][$temp['list'][$i]] = array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]);
+						$reserve['@default'][$temp['list'][$i]] = array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]);
+
+
 					}
-
-					$result['success'] = true;
 				}
-
-				# # # Caso não exista includes
-				else {
-					$result['success'] = false;
-					$result['process']['include']['success'] = false;
-					$result['process']['include']['erro'] = 'Não foi descrito nem uma lista de inclusão em "'.$page.'"';
-					$result['erro'] = $result['process']['include']['erro'];
-				}
-
-				unset($me);
+				unset($temp, $i); // Paga os valores utilizados
 			}
+			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
 		}
 
-		// Imprime solicitação
-		// print_r($result);
+		unset($me); // Apaga os parametros usados temposariamente
+		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
+
+
+
+		# # / INICIA OS TRATAMENTOS DOS ELEMENTOS/ # #
+		if ($result['process']['inicia']['success'] == true) {
+
+
+			# # Valida se é recebido um content
+			if ($content == true) {
+
+				# # Modifica as condições recebidas caso contrario usa o include
+				switch ($content) {
+					case 'head': $content = '@head'; break;
+					case 'body_end': $content = '@body_end'; break;
+					case 'include': $content = '@include'; break;
+				}
+
+				# # Valida se esta sendo recebido contents
+				if ($content != '') { $result['process']['inicia content'] = true;}
+				# # # caso content seja vazio preenche como "include"
+				else { $content = '@include'; $result['process']['inicia content'] = true; $result['warning']['inicia content'] = 'Foi adicionado automaticamente o valor de "include"'; }
+
+				# seleciona apenas os itens a setem tratados
+				$me = $reserve['@default'][$content];
+
+				# Monta estrutura para HEAD
+				if ($content == '@head') {
+
+					# # Inicia head
+					$temp['construct'] .= "\n\t<head>";
+
+					# # # Monta cada meta-tag
+					if (array_key_exists('@meta', $me)) {
+						
+						# # # # Seleciona cada meta-tag
+						foreach ($me['@meta'] as $key => $val) {
+
+							# # # # # Valida se é um conjunto de metas do tipo configruação
+							if ($key == '@config') {
+
+								# # # # # # Seleciona cada item dentro de config
+								for ($i=0; $i < count($val); $i++) { 
+
+									# # # # # # Separa temp->meta para reservar o conjunto de atributos
+									$temp['meta'] = '';
+
+									# # # # # # Explode cada item na posição atual
+									foreach ($val[$i] as $key2 => $val2) {
+										$temp['meta'] .= '"'.$key2.'"="'.$val2.'" ';
+									}
+
+									# # # # # # adiona o a meta tag de configruação
+									$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>$temp['meta']));
+
+									unset($key2, $val2);
+								}
+
+								unset($i,$temp['meta']);
+							}
+
+							# # # # # valida se as meta são de indexação
+							else {
+
+								$temp['construct'] .= "\n\t\t".html_required(array('type'=>'meta', 'content'=>'"name"="'.$key.'" "content"="'.$val.'"'));
+							}
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# # # Adiciona title
+					$temp['construct'] .= "\n\t\t".html_required(array('type'=>'title', 'content'=>$me['@title']));
+					# # # //
+
+					# # # Monta css
+					if (array_key_exists('@style', $me)) {
+						foreach ($me['@style'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# # # Monta script
+					if (array_key_exists('@script', $me)) {
+						foreach ($me['@script'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# # Fecha head
+					$temp['construct'] .= "\n\t</head>";
+					$temp['construct'] .= "\n";
+
+					# reserva os dados tratados em done
+					$result['done'] = $temp['construct'];
+
+					# imprime done
+					echo $result['done'];
+
+					# apaga temp
+					unset($temp);
+				}
+
+				# Monta estrutura para BODY_END
+				if ($content == '@body_end') {
+
+					# Inicia 
+					$temp['construct'] .= "\n";
+
+					# # # Monta script
+					if (array_key_exists('@script', $me)) {
+
+						foreach ($me['@script'] as $key => $val) {
+
+							$temp['construct'] .= "\n\t\t".html_required(array('type'=>$val, 'content'=>$key));
+						}
+
+						unset($key, $val);
+					}
+					# # # //
+
+					# Fecha
+					$temp['construct'] .= "\n";
+
+					# reserva os dados tratados em done
+					$result['done'] = $temp['construct'];
+
+					# imprime done
+					echo $result['done'];
+
+					# apaga temp
+					unset($temp);
+				}
+
+				# Monta estrutura para INCLUDE
+				if ($content == '@include') {
+
+					# # # Valida se existe includes
+					if (count($me) > 0) {
+
+						# # # Navega em cada valor a ser incluido
+						for ($i=0; $i < count($me); $i++) { 
+
+							# # # inclui cada item da biblioteca
+							include path_relative($me[$i])['done'];
+
+							$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];
+						}
+
+						$result['success'] = true;
+					}
+
+					# # # Caso não exista includes
+					else {
+						$result['success'] = false;
+						$result['process']['include']['success'] = false;
+						$result['process']['include']['erro'] = 'Não foi descrito nem uma lista de inclusão em "'.$page[0].'"';
+						$result['erro'] = $result['process']['include']['erro'];
+					}
+
+					unset($me);
+				}
+			}
+		}
+		# # / INICIA OS TRATAMENTOS DOS ELEMENTOS/ # #
+
+		# Retorna os dados da função
 		return $result;
 	}
 ?>

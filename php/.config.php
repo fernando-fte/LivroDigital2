@@ -34,6 +34,7 @@
 	$settings['dir']['php'] = $settings['wwwroot'].'/php'; // Local base de todos os dados
 	$settings['dir']['contents'] = $settings['wwwroot'].'/contents'; // Local base de todos os dados
 	$settings['dir']['form'] = $settings['dir']['contents'].'/form'; // Conjunto de  formuláros
+	$settings['dir']['home'] = $settings['dir']['contents'].'/home'; // Conjunto de  formuláros
 	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
 	$settings['dir']['app'] = $settings['wwwroot'].'/aplicativos'; // Local das aplicações rodando
 
