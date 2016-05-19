@@ -1,5 +1,8 @@
 <?php
 
+	# Oculta todos os erros do php
+	error_reporting(0);
+
 	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
 	// Move post e get para array separada
 	$post = $_POST;
@@ -31,9 +34,6 @@
 	}
 	# # # \ VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY \ # # #
 
-
-	# Oculta todos os erros do php
-	error_reporting(0);
 
 	// Config page default
 	# if (array_key_exists('page', $get)) { $get['page'] = 'home'; }

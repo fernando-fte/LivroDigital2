@@ -1,5 +1,7 @@
 <?php
 	# # # / DEFINE PAGINAS DA APLICAÇÃO / # # # 
+	// Syntax = '@query' => array( '@group' => array( 1 => 2 ), '@double' => true '@next' => array( 'id', 'sku'))
+
 	$settings['pages'] = array(
 
 		// Aparametros padrão que todos os elemento herdarão
