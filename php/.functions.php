@@ -553,4 +553,6 @@
 		# Retorna os dados da função
 		return $result;
 	}
+
+	# # # \ CONFIGURA PAGINAS \ # # #
 ?>

@@ -74,10 +74,20 @@
 		// Paginas de teste
 		'teste' => array(
 			'@no_default' => array('@include'),
-			'@head' => array(
-				'@title' => 'Testes'
+
+			'trata-navegacao' => array (
+				'@head' => array(
+					'@title' => 'Navegação por paginas'
+				),
+				'@include' => array( $settings['dir']['php'].'/teste/trata-navegacao/index.php' )
 			),
-			'@include' => array( $settings['dir']['php'].'/teste/index.php' )
+
+			'trata-syntax-da-pagina' => array (
+				'@head' => array(
+					'@title' => 'Trata syntax da navegação por paginas'
+				),
+				'@include' => array( $settings['dir']['php'].'/teste/trata-syntax-da-pagina/index.php' )
+			)
 		),
 
 		// Paginas de aplicativos
