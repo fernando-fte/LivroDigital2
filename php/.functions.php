@@ -211,7 +211,6 @@
 		# # # # # / TRATA HELP / # # # # # #
 
 
-
 		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
 		if ($result['process']['valida-page'] == true) {
 
@@ -296,8 +295,8 @@
 			# # / VALIDA SE EXISTE DEFAULT / # #
 			# # # # # / MONTA DEFAULT / # # # # # #
 
-			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
 
+			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
 			# # Solicita sub-valor
 			if (count($page) > 1) {
 
@@ -323,15 +322,17 @@
 			# # # # # / TRATA SE DEVE SER SELECIONADO UMA SUB PASTA / # # # # # #
 
 
-			# # valida se é uma solicitação da função
+			# # # # # # / VALIDA SE É UMA SOLICITAÇÃO DA FUNÇÃO / # # # # # #
 			if ($result['this'] == 'me') {
 
 				$result['done']['@default'] = $reserve['@default'];
 				$result['done']['@pages'] = $reserve['@pages'];
 				$result['success'] = true;
 			}
+			# # # # # # / VALIDA SE É UMA SOLICITAÇÃO DA FUNÇÃO / # # # # # #
 
-			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
+
+			# # # # # # / DEFINE O INICIO DO TRATAMENTO DOS ELEMENTOS PARA ESSA PAGINA / # # # # # #
 			if ($result['this'] == 'F::construct_page_required') {
 
 				# # Valida o inicio dos tratamentos
@@ -353,20 +354,16 @@
 						}
 
 						# # # # # Subistitui o reserve->default pelos parametros da pagina
-						// $reserve['@default'][$temp['list'][$i]] = array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]);
-						$reserve['@default'][$temp['list'][$i]] = array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]);
-
-
+						$reserve['@default'][$temp['list'][$i]] = ($temp['list'][$i] == '@include' ? array_merge_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]) : array_replace_recursive($reserve['@default'][$temp['list'][$i]], $reserve['@pages'][$temp['list'][$i]]));
 					}
 				}
 				unset($temp, $i); // Paga os valores utilizados
 			}
-			# # # / Define o inicio do tratamento dos elementos para essa pagina / # # #
+			# # # # # # / DEFINE O INICIO DO TRATAMENTO DOS ELEMENTOS PARA ESSA PAGINA / # # # # # #
 		}
 
 		unset($me); // Apaga os parametros usados temposariamente
 		# # / INICIA CASO O PROCESSO DE VALIDAÇÃO DE PAGINA ESTEJA CORRETO / # #
-
 
 
 		# # / INICIA OS TRATAMENTOS DOS ELEMENTOS/ # #
