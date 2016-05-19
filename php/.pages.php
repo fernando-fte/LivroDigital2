@@ -68,7 +68,7 @@
 						'@title' => 'Lista de autores'
 					),
 
-					'@include' => array( $settings['dir']['form'].'/list.livro.html' )
+					'@include' => array( $settings['dir']['form'].'/list.autor.html' )
 				)
 			)
 		),
