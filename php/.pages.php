@@ -85,11 +85,13 @@
 
 			'vg' => array(
 				'@no_default' => array('@head->style', '@body_end->script'),
+
 				'@head' => array(
 					'@title' => 'Educação e Novas Tecnologias para o Ensino',
 					'@meta' => array(
 						'@description' => 'Aplicativo modelo da VG'
 					),
+
 					'@style' => array(
 						'bootstrap-css' => 'css',
 						'fontawesome' => 'css',

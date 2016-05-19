@@ -26,6 +26,14 @@
 		# explode as barras
 		$me = explode('/', $me);
 
+		// print_r($me);
+		# # valida se foi adionado no fim da url uma barra
+		if ($me[(count($me) - 1)] != '') {
+
+			# valida se é um arquivo
+			unset($me[(count($me) - 1)]);
+		}
+
 		# #inicia loop para seelecionar o path relativo
 		for ($i=0; $i < count($me); $i++) { 
 
@@ -515,11 +523,16 @@
 						for ($i=0; $i < count($me); $i++) { 
 
 							# # # inclui cada item da biblioteca
-							include path_relative($me[$i])['done'];
+							$temp = include path_relative($me[$i])['done'];
+
+							# # # caso nao tenha sido incluido tenta novamente
+							if ($temp == false) {
+								include str_replace('..', '.', path_relative($me[$i])['done']);
+							}
 
 							$result['process']['include']['log'][$i] = path_relative($me[$i])['done'];
 						}
-
+						unset($temp);
 						$result['success'] = true;
 					}
 
