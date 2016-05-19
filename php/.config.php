@@ -37,7 +37,7 @@
 
 	// Config page default
 	# if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
-	if (!array_key_exists('page', $get)) { $get['page'] = 'home'; }
+	if (!array_key_exists('page', $get)) { $get['page'] = array('home'); }
 	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
 
 
@@ -102,9 +102,26 @@
 		# # # #
 	);
 
-	// Inclui configuração de paginas
-	include '.pages.php';
 
-	// Inclui conjuntos de função para configurações
+
+	# # # / Inclui configuração de paginas / # # #
+	include '.pages.php';
+	# # # / Inclui configuração de paginas / # # #
+
+	# # # / Inclui conjuntos de função para configurações / # # #
 	include '.functions.php';
+	# # # / Inclui conjuntos de função para configurações / # # #
+
+
+	# # # # # / Configura nagevação / # # # # #
+	$temp = parse_navgation()['done'];
+
+	if ($temp['path'] != false) {
+		$get['page'] = $temp['path'];
+	}
+	if ($temp['query'] != false) {
+		$get = array_replace_recursive($temp['query'], $get);
+	}
+	unset($temp);
+	# # # # # / Configura nagevação / # # # # #
 ?>
