@@ -1,15 +1,45 @@
 <?php
 
+	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
 	// Move post e get para array separada
 	$post = $_POST;
 	$get = $_GET;
 
-	// Oculta todos os erros do php
+
+	# # # \ VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY \ # # #
+	if (parse_url($_SERVER['REQUEST_URI'])['query'] != false) {
+		
+		# # Explode as variaves
+		$me = explode('&', parse_url($_SERVER['REQUEST_URI'])['query']);
+
+		# # Reserva dados 
+		$temp['query_decode']['get'] = array();
+
+		# # # Seleciona cada argumento
+		for ($i=0; $i < count($me); $i++) { 
+
+			$temp['query_decode']['me'] = explode('=', $me[$i]);
+			$temp['query_decode']['get'][$temp['query_decode']['me'][0]] = ($temp['query_decode']['me'][1] ? $temp['query_decode']['me'][1] : '');
+		}
+		unset($i);
+
+		# # # Mescla os dados de @get
+		$get = array_replace_recursive($temp['query_decode']['get'], $get);
+
+		# # # Apaga dados usados
+		unset($temp, $me);
+	}
+	# # # \ VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY \ # # #
+
+
+	# Oculta todos os erros do php
 	error_reporting(0);
 
 	// Config page default
-	// if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
+	# if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
 	if (!array_key_exists('page', $get)) { $get['page'] = 'home'; }
+	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
+
 
 
 	# # # # # # # # # / CONFIGURA PATH DE TODOS OS ELEMENTOS / # # # # # # # # #
