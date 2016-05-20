@@ -754,8 +754,8 @@
 					}
 				}
 			}
-
-			return $result;
 		}
+
+		return $result;
 	}
 ?>

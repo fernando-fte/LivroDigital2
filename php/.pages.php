@@ -40,8 +40,12 @@
 			),
 
 			'@include' => array(
-				$settings['dir']['home'].'abertura.php'
+				$settings['dir']['home'].'/abertura.html'
 			)
+		),
+
+		// Pagina de boas vindas
+		'home' => array(
 		),
 
 		// Pagina de edição de livro
