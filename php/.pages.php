@@ -68,6 +68,14 @@
 
 			'novo' => array(
 				'@include' => array(
+					$settings['dir']['app-headers'].'/autor.new.html',
+					$settings['dir']['app-blocks'].'/autor.form.html'
+				)
+			),
+
+			'edit' => array(
+				'@include' => array(
+					$settings['dir']['app-headers'].'/autor.edit.html',
 					$settings['dir']['app-blocks'].'/autor.form.html'
 				)
 			)

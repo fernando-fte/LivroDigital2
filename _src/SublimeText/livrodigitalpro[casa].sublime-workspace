@@ -299,15 +299,7 @@
 			"file": "/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
 			"settings":
 			{
-				"buffer_size": 1037,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
-			"settings":
-			{
-				"buffer_size": 128,
+				"buffer_size": 1096,
 				"line_ending": "Windows"
 			}
 		}
@@ -319,10 +311,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
-		"last_filter": "",
+		"height": 127.0,
+		"last_filter": "remoc",
 		"selected_items":
 		[
+			[
+				"remoc",
+				"Package Control: Remove Package"
+			],
+			[
+				"git: s",
+				"Git: Status"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
 			[
 				"Package Control: ins",
 				"Package Control: Install Package"
@@ -336,13 +340,16 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 416.0
+		"width": 512.0
 	},
 	"console":
 	{
-		"height": 146.0,
+		"height": 144.0,
 		"history":
 		[
+			"git",
+			"cls",
+			"git",
 			"node -v",
 			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
@@ -362,22 +369,21 @@
 		"/D/fernando.fte/Projetos/web/livrodigital/books",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/app",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks",
 		"/D/fernando.fte/Projetos/web/livrodigital/script",
-		"/D/fernando.fte/Projetos/web/livrodigital/style",
-		"/D/fernando.fte/Projetos/web/livrodigital/vendor/materialize",
-		"/D/fernando.fte/Projetos/web/livrodigital/vendor/materialize/css"
+		"/D/fernando.fte/Projetos/web/livrodigital/style"
 	],
 	"file_history":
 	[
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic/menu.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.list.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.pages.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.paths.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.form.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/style/app.less",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.list.html",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.functions.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/pages.less",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/menu.html",
@@ -689,15 +695,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1037,
+						"buffer_size": 1096,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								133,
-								133
+								1095,
+								1095
 							]
 						],
 						"settings":
@@ -710,34 +716,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102,
-								102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -800,6 +778,10 @@
 		"selected_items":
 		[
 			[
+				".pages",
+				"php\\.pages.php"
+			],
+			[
 				".pa",
 				"php\\.paths.php"
 			],
@@ -826,10 +808,6 @@
 			[
 				"men",
 				"contents\\form\\menu.html"
-			],
-			[
-				".pages",
-				"php\\.pages.php"
 			],
 			[
 				".path",

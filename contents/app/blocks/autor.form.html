@@ -1,74 +1,105 @@
 
 	<div class="container">
-		<!-- Nome completo-->
-		<div class="form-group row">
-			<div class="col-md-offset-1 col-md-10">
-				<input class="form-control input-lg text-center" type="text" placeholder="Nome completo">
-			</div>
-		</div>
+		<div class="form-horizontal col-md-9 col-md-offset-1">
 
-		<!-- Títulação -->
-		<div class="form-group row">
-
-			<p class="h4">Titulação</p>
-
-
-			<div class="col-md-offset-1 col-md-10">
-
-				<!-- tipo -->
-				<div class="col-md-2">
-					<select class="form-control input-xs text-center">
-						<option value="">Doutor</option>
-						<option value="">Mestre</option>
-						<option value="">Pós-Graduação</option>
-					</select>
-				</div>
-
-				<!-- Area -->
-				<div class="col-md-5">
-					<input class="form-control input-xs text-center" type="text" placeholder="Área">
-				</div>
-
-				<!-- Insituição -->
-				<div class="col-md-3">
-					<input class="form-control input-xs text-center" type="text" placeholder="Instituição">
-				</div>
-
-				<!-- Ano -->
-				<div class="col-md-2">
-					<input class="form-control input-xs text-center" type="number" placeholder="2000">
+			<!-- Nome do autor -->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="autor">Nome do autor</label>
+				<div class="col-md-12">
+					<input id="autor" name="autor" type="text" placeholder="Nome completo" class="form-control input-lg" required="">
 				</div>
 			</div>
 
-			<div class="col-md-offset-1 col-md-10">
-
-				<!-- tipo -->
+			<hr>
+			<div class="row">
 				<div class="col-md-2">
-					<select disabled class="form-control input-xs text-center">
-						<option value="">Doutor</option>
-						<option value="">Mestre</option>
-						<option value="">Pós-Graduação</option>
-					</select>
+					<img src="//placehold.it/600x800/0D0D0D/ffffff?text=Foto" width="100%">
+				</div>
+				<div class="col-md-9">
+
+					<!-- File Button --> 
+					<div class="form-group">
+						<label class="col-md-3 control-label" for="figura">Enviar figura</label>
+						<div class="col-md-12">
+							<input id="figura" name="figura" class="input-file" type="file">
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+
+			<!-- Titulação -->
+			<div class="well well-sm bg-danger">
+				<p><b>Tutulação</b></p>
+
+				<!-- Titulação -->
+				<div class="form-group">
+					<!-- <label class="col-md-2 control-label" for="titulacao">Titulação</label> -->
+					<div class="col-md-6">
+						<div class="input-group input-group-sx">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									Título
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu pull-right">
+									<li><a href="#">Doutorado</a></li>
+									<li><a href="#">Mestrado</a></li>
+									<li><a href="#">Pós-Graduado</a></li>
+								</ul>
+							</div>
+							<input id="titulacao" name="titulacao" class="form-control" placeholder="Area" type="text" required="">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="input-group input-group-sx">
+							<input id="instituicao" name="instituicao" class="form-control" placeholder="Instituição" type="text" required="">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									Ano
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu pull-right">
+									<li><a href="#">2015</a></li>
+									<li><a href="#">2014</a></li>
+									<li><a href="#">2013</a></li>
+									<li><a href="#">2012</a></li>
+									<li><a href="#">2011</a></li>
+									<li><a href="#">2010</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-1">
+						<button id="cancelar" name="cancelar" class="btn btn-inverse btn-sm">Cancelar</button>
+					</div>
 				</div>
 
-				<!-- Area -->
-				<div class="col-md-5">
-					<input disabled class="form-control input-xs text-center" type="text" placeholder="Área">
-				</div>
+				<hr>
 
-				<!-- Insituição -->
-				<div class="col-md-2">
-					<input disabled class="form-control input-xs text-center" type="text" placeholder="Instituição">
+				<!-- Add Titulação -->
+				<div class="form-group">
+					<div class="col-md-12">
+						<button id="add-titulacao" name="add-titulacao" class="btn btn-info btn-sm">+ titulação</button>
+					</div>
 				</div>
+			</div>
 
-				<!-- Ano -->
-				<div class="col-md-2">
-					<input disabled class="form-control input-xs text-center" type="number" placeholder="2000">
+			<!-- Sobre o autor -->
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="sobre">Sobre o autor</label>
+				<div class="col-md-12">
+					<textarea class="form-control input-lg" id="sobre" name="sobre">Sobre</textarea>
 				</div>
+			</div>
 
-				<!-- Botões -->
-				<div class="col-md-1">
-					<span class="btn btn-info"><span class="fa fa-plus"></span></span>
+			<!-- Sobre o autor -->
+			<div class="form-group">
+				<div class="col-md-12">
+					<button id="salvar" name="salvar" class="btn btn-success btn-sm">Salvar</button>
+					<button id="cancelar" name="cancelar" class="btn btn-danger btn-sm">Cancelar</button>
 				</div>
 			</div>
 		</div>
