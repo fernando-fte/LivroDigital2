@@ -11,6 +11,7 @@
 	$settings['dir']['vendor'] = $settings['wwwroot'].'/vendor'; // Configura seleção do servidor mais pasta local
 	$settings['dir']['vendor-scripts'] = $settings['dir']['vendor'].'/scripts'; // Configura local dos frameworks scripts
 	$settings['dir']['vendor-bootstrap'] = $settings['dir']['vendor'].'/bootstrap'; // Configura local dos frameworks scripts
+	$settings['dir']['vendor-materialize'] = $settings['dir']['vendor'].'/materialize'; // Configura local dos frameworks scripts
 	$settings['dir']['vendor-fontawesome'] = $settings['dir']['vendor'].'/FontAwesome'; // Configura local dos frameworks scripts
 
 	# diretorio de paginas
@@ -22,15 +23,23 @@
 
 	# Diretorios de paginas
 	$settings['dir']['contents'] = $settings['wwwroot'].'/contents'; // Local base de todos os dados
-	$settings['dir']['form'] = $settings['dir']['contents'].'/form'; // Conjunto de  formuláros
-	$settings['dir']['home'] = $settings['dir']['contents'].'/home'; // Conjunto de  formuláros
+	$settings['dir']['app'] = $settings['dir']['contents'].'/app'; // Conjunto de dados dos arquivos
+
+	# # Contents de app
+	$settings['dir']['app-basic'] = $settings['dir']['app'].'/basic'; // Arquivos basicos
+	$settings['dir']['app-blocks'] = $settings['dir']['app'].'/blocks'; // Blocos das paginas
+	$settings['dir']['app-headers'] = $settings['dir']['app'].'/headers'; // Cabeçarios
+
+	# # # #
 
 	# Diretorios de arquivos do livro
 	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
 
+
+
 	# Diretorios de aplicativos
-	$settings['dir']['app'] = $settings['wwwroot'].'/aplicativos'; // Local das aplicações rodando
-	$settings['dir']['app-vg'] = $settings['dir']['app'].'/vgconsultoria'; // Local das aplicações rodando
+	$settings['dir']['issue'] = $settings['wwwroot'].'/aplicativos'; // Local das aplicações rodando
+	$settings['dir']['issue-vg'] = $settings['dir']['issue'].'/vgconsultoria'; // Local das aplicações rodando
 
 
 	# # # Configura path arquivos e framework
@@ -41,9 +50,11 @@
 		'coffee' => $settings['dir']['vendor-scripts'].'/coffee-script.js',
 		'less' => $settings['dir']['vendor-scripts'].'/less.min.js',
 		'bootstrap-js' => $settings['dir']['vendor-bootstrap'].'/bootstrap.min.js',
+		'materialize-js' => $settings['dir']['vendor-materialize'].'/js/materialize.min.js',
 
 		# # scripts
 		'bootstrap-css' => $settings['dir']['vendor-bootstrap'].'/bootstrap.min.css',
+		'materialize-css' => $settings['dir']['vendor-materialize'].'/css/materialize.min.css',
 		'fontawesome' => $settings['dir']['vendor-fontawesome'].'/font-awesome.min.css',
 		# # # # # #
 
@@ -57,9 +68,9 @@
 		# # # #
 
 		# # aplicativo "livro digital"
-		'app-vg-style-css' => $settings['dir']['app-vg'].'/style/app.css',
-		'app-vg-style-less' => $settings['dir']['app-vg'].'/style/app.less',
-		'app-vg-app-coffee' => $settings['dir']['app-vg'].'/scripts/app.coffee'
+		'issue-vg-style-css' => $settings['dir']['issue-vg'].'/style/app.css',
+		'issue-vg-style-less' => $settings['dir']['issue-vg'].'/style/app.less',
+		'issue-vg-app-coffee' => $settings['dir']['issue-vg'].'/scripts/app.coffee'
 		# # # #
 	);
 	# # # # # # # # # / CONFIGURA PATH DE TODOS OS ELEMENTOS / # # # # # # # # #

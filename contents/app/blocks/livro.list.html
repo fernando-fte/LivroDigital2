@@ -1,0 +1,30 @@
+	
+	<h1 class="container">Livros <a href="<?php path('root')?>/autor/novo/" class="btn btn-success btn-lg pull-right">Novo autor</a></h1>
+
+	<div class="container">
+		
+		<table class="table table-srtiped table-hover">
+			<thead>
+				<th>#</th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>Faculdade</th>
+				<th>Lote</th>
+			</thead>
+			<tbody>
+				<?php for ($i=0; $i < 50; $i++) { ?>
+				<tr>
+					<td><code><?php echo substr(md5($i), -6); ?></code></td>
+					<td><a href="<?php path('root')?>/livros/edit/ID/" class="btn btn-info btn-xs">Editar <span class="fa fa-gear"></span></a></td>
+					<td><p class="teal-text" data-position="right" data-delay="50" data-tooltip="Completo"><span class="fa fa-check"></span></p></td>
+					<td>Educação e Novas Tecnologias para o Ensino</td>
+					<td><small><b>Criação</b> 10/11/2016</small> / <small><b>Modificação</b> 10/11/2016</small></td>
+					<td><span class="label label-danger">UNIPAR</span></td>
+					<td><span class="label label-primary">Lote 1</span></td>
+				</tr>
+				<?php } //Fim do loop ?>
+			</tbody>
+		</table>
+	</div>

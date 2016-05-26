@@ -39,64 +39,42 @@
 			),
 
 			'@include' => array(
-				$settings['dir']['home'].'/abertura.html'
+				$settings['dir']['app-basic'].'/menu.html'
 			)
 		),
 
 		// Pagina de boas vindas
 		'home' => array(
+
 		),
 
-		// Pagina de edição de livro
-		'editor' => array(
-			'@no_default' => array('@include'),
-			'@default' => array(
-				'@include' => array( $settings['dir']['form'].'/menu.html' )
+		'livros' => array(
+			'@head' => array(
+				'@title' => 'Todos os livros'
+			),
+			'@include' => array(
+				$settings['dir']['app-blocks'].'/livro.list.html'
+			)
+		),
+
+		'autor' => array(
+			'@head' => array(
+				'@title' => 'Todos os livros'
 			),
 
-			'list' => array (
+			'@include' => array(
+				$settings['dir']['app-blocks'].'/autor.list.html'
+			),
 
-				'livros' => array(
-
-					'@head' => array(
-						'@title' => 'Lista de livros'
-					),
-
-					'@include' => array( $settings['dir']['form'].'/list.livro.html' )
-				),
-
-				'autores' => array(
-
-					'@head' => array(
-						'@title' => 'Lista de autores'
-					),
-
-					'@include' => array( $settings['dir']['form'].'/list.autor.html' )
+			'novo' => array(
+				'@include' => array(
+					$settings['dir']['app-blocks'].'/autor.form.html'
 				)
 			)
 		),
 
-		// Paginas de teste
-		'teste' => array(
-			'@no_default' => array('@include'),
-
-			'trata-navegacao' => array (
-				'@head' => array(
-					'@title' => 'Navegação por paginas'
-				),
-				'@include' => array( $settings['dir']['php'].'/teste/trata-navegacao/index.php' )
-			),
-
-			'trata-syntax-da-pagina' => array (
-				'@head' => array(
-					'@title' => 'Trata syntax da navegação por paginas'
-				),
-				'@include' => array( $settings['dir']['php'].'/teste/trata-syntax-da-pagina/index.php' )
-			)
-		),
-
 		// Paginas de aplicativos
-		'apps' => array(
+		'issue' => array(
 
 			'vg' => array(
 				'@no_default' => array('@head->style', '@body_end->script'),

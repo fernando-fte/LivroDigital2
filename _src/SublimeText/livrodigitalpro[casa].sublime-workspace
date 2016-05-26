@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"t",
+				"td	Tag"
+			],
+			[
+				"arry",
+				"array"
+			],
+			[
+				"suce",
+				"success"
+			],
+			[
 				"SETT",
 				"settings"
 			],
@@ -22,10 +42,6 @@
 			[
 				"sc",
 				"script"
-			],
-			[
-				"for",
-				"foreach	foreach …"
 			],
 			[
 				"tem",
@@ -110,10 +126,6 @@
 			[
 				"w",
 				"while"
-			],
-			[
-				"t",
-				"top"
 			],
 			[
 				"app-cor-",
@@ -283,6 +295,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
+			"settings":
+			{
+				"buffer_size": 1037,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
+			"settings":
+			{
+				"buffer_size": 128,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -333,29 +361,46 @@
 		"/D/fernando.fte/Projetos/web/livrodigital",
 		"/D/fernando.fte/Projetos/web/livrodigital/books",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/form",
-		"/D/fernando.fte/Projetos/web/livrodigital/php",
-		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor"
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks",
+		"/D/fernando.fte/Projetos/web/livrodigital/script",
+		"/D/fernando.fte/Projetos/web/livrodigital/style",
+		"/D/fernando.fte/Projetos/web/livrodigital/vendor/materialize",
+		"/D/fernando.fte/Projetos/web/livrodigital/vendor/materialize/css"
 	],
 	"file_history":
 	[
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic/menu.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/.pages.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/.paths.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.form.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/style/app.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.list.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/.functions.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/pages.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/menu.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/home/basic/menu.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.config.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/variables.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap/scaffolding.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/bootstrap/badges.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/list.autor.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/pages.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/index.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/list.livro.html",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/list.autor.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/form.menu.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/form/form.basic.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/vendor/phpSelectSQL.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/testes/index.php",
-		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/_src/roteiro.txt",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/scripts/app.coffee",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/sumario.less",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/library/figura.4.1.svg",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.css",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.less",
-		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/variables.less",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/cmd.start.txt",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/formularios/form.basic.xml",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/functions.php",
@@ -452,21 +497,7 @@
 		"/D/fernando.fte/Projetos/web/livroDigital/sources/unidade.i.src",
 		"/D/fernando.fte/Projetos/web/livroDigital/sources/unidade.i.content.src",
 		"/D/fernando.fte/Projetos/web/livroDigital/lab/scripts/app.js",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/index.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/scripts/app.coffee",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/index.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/scripts.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/php/functions.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/scripts.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/script.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/map.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/body.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/php/._.config.php",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/sources/head.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/bootstrap/variables.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/menu-bar.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/app.css",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/header.src"
+		"/D/fernando.fte/Projetos/web/livroDigital/lab/index.php"
 	],
 	"find":
 	{
@@ -488,6 +519,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"label label-danger",
+			"<!-- /.col-lg-6 -->",
+			"<!-- /input-group -->",
+			"<?",
+			"app-vg",
+			"'app'",
+			"app-vg",
+			"app-vg-",
+			"$settings['dir']['app-vg']",
+			"$settings['dir']['app']",
+			"publish",
+			"app",
+			"$settings['dir']",
+			"h3",
 			"APP NATIVO",
 			"xml",
 			"\"h5 ",
@@ -601,21 +646,7 @@
 			"md",
 			"especial",
 			"bg",
-			"bg-variant",
-			"-variant",
-			".text-emphasis-variant",
-			".text-emphasis-variant(",
-			"app-cor-",
-			"blue",
-			"@app-cor-verde",
-			".app-cor-green",
-			"@app-cor-instituicao",
-			".app-cor-inst",
-			"inst",
-			"cor-red",
-			"@app-cor",
-			"-cor-",
-			".app-cor"
+			"bg-variant"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -649,8 +680,66 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1037,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102,
+								102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -701,7 +790,7 @@
 	"project": "livrodigitalpro[casa].sublime-project",
 	"replace":
 	{
-		"height": 38.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -710,6 +799,42 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				".pa",
+				"php\\.paths.php"
+			],
+			[
+				".p",
+				"php\\.pages.php"
+			],
+			[
+				".page",
+				"php\\.pages.php"
+			],
+			[
+				"app.l",
+				"style\\app.less"
+			],
+			[
+				".func",
+				"php\\.functions.php"
+			],
+			[
+				"pages",
+				"aplicativos\\vgconsultoria\\style\\app\\pages.less"
+			],
+			[
+				"men",
+				"contents\\form\\menu.html"
+			],
+			[
+				".pages",
+				"php\\.pages.php"
+			],
+			[
+				".path",
+				"php\\.paths.php"
+			],
 			[
 				"conf",
 				"php\\.config.php"
