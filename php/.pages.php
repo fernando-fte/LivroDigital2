@@ -48,27 +48,41 @@
 
 		),
 
-		'livros' => array(
+		'livro' => array(
 			'@head' => array(
 				'@title' => 'Todos os livros'
 			),
 			'@include' => array(
-				$settings['dir']['app-blocks'].'/livro.list.html'
-			)
-		),
-
-		'autor' => array(
-			'@head' => array(
-				'@title' => 'Todos os livros'
-			),
-
-			'@include' => array(
-				$settings['dir']['app-blocks'].'/autor.list.html'
+				$settings['dir']['app-blocks'].'/livro.lista.html'
 			),
 
 			'novo' => array(
 				'@include' => array(
-					$settings['dir']['app-headers'].'/autor.new.html',
+					$settings['dir']['app-headers'].'/livro.novo.html',
+					$settings['dir']['app-blocks'].'/livro.form.html'
+				)
+			),
+
+			'novo' => array(
+				'@include' => array(
+					$settings['dir']['app-headers'].'/livro.edit.html',
+					$settings['dir']['app-blocks'].'/livro.form.html'
+				)
+			),
+		),
+
+		'autor' => array(
+			'@head' => array(
+				'@title' => 'Todos os autores'
+			),
+
+			'@include' => array(
+				$settings['dir']['app-blocks'].'/autor.lista.html'
+			),
+
+			'novo' => array(
+				'@include' => array(
+					$settings['dir']['app-headers'].'/autor.novo.html',
 					$settings['dir']['app-blocks'].'/autor.form.html'
 				)
 			),

@@ -1,5 +1,5 @@
 	
-	<h1 class="container">Livros <a href="<?php path('root')?>/autor/novo/" class="btn btn-success btn-lg pull-right">Novo autor</a></h1>
+	<h1 class="container">Livros <a href="<?php path('root')?>/livro/novo/" class="btn btn-success btn-lg pull-right">Novo livro</a></h1>
 
 	<div class="container">
 		
@@ -17,7 +17,7 @@
 				<?php for ($i=0; $i < 50; $i++) { ?>
 				<tr>
 					<td><code><?php echo substr(md5($i), -6); ?></code></td>
-					<td><a href="<?php path('root')?>/livros/edit/ID/" class="btn btn-info btn-xs">Editar <span class="fa fa-gear"></span></a></td>
+					<td><a href="<?php path('root')?>/livro/edit/ID/" class="btn btn-info btn-xs">Editar <span class="fa fa-gear"></span></a></td>
 					<td><p class="teal-text" data-position="right" data-delay="50" data-tooltip="Completo"><span class="fa fa-check"></span></p></td>
 					<td>Educação e Novas Tecnologias para o Ensino</td>
 					<td><small><b>Criação</b> 10/11/2016</small> / <small><b>Modificação</b> 10/11/2016</small></td>
