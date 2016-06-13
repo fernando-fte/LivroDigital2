@@ -104,17 +104,29 @@
 			.app-legenda {
 
 				.label {
-					span:first-child { &:after { content: " / " } }
+					// .app-sequence-this { &:after {content: " / ";} }
+					.app-sequence-chapter { &:after {content: ".";} }
+					.app-sequence-all { 
+						display: none;
+						&:before {content: "/";} 
+					}
+					
+					&:after { content: ": "}
 				}
+			}
 
-				&:after { content: " - "; margin-left: 5px; }
+			.app-fonte {
+				&:before { content: " - "; margin-left: 5px; }
 			}
 		}
 
 		&.app-graphic-video {
 			// .app-grapc-content-caption {display: none}
-			.app-graphic-content-nav { background-image: url('@{wwwpattern}img/ico.video.svg'); background-repeat: no-repeat; background-position: center;}
+			.app-graphic-content-nav { background-image: url('../img/ico.video.svg'); background-repeat: no-repeat; background-position: center;}
 			.app-grapc-content-caption .app-legenda:after { display: none; }
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Vídeo ";} }
 		}
 		&.app-graphic-table {
 
@@ -125,8 +137,18 @@
 				overflow: auto;
 				background-color: inherit;
 				margin-right: -17px;
-				display: table;
+				display: inline-block;
+				height: auto;
+				width: 100%;
 			}
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Tabela ";} }
+		}
+		&.app-graphic-figure {
+
+			// Configura Nome da etiqueta
+			.app-grapc-content-caption  .app-legenda  .label  .app-sequence-chapter { &:before {content: "Figura ";} }
 		}
 	}
 }
