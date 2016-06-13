@@ -96,10 +96,14 @@
 		),
 
 		// Paginas de aplicativos
-		'issue' => array(
+		'issues' => array(
+			'@no_default' => array(
+				'@head->style', 
+				'@body_end->script',
+				'@include'
+			),
 
 			'vg' => array(
-				'@no_default' => array('@head->style', '@body_end->script'),
 
 				'@head' => array(
 					'@title' => 'Educação e Novas Tecnologias para o Ensino',
@@ -110,7 +114,7 @@
 					'@style' => array(
 						'bootstrap-css' => 'css',
 						'fontawesome' => 'css',
-						'app-vg-style-css'  => 'css'
+						'issue-vg-less'  => 'less'
 					)
 				),
 
@@ -121,11 +125,40 @@
 						'bootstrap-js' => 'script',
 						'coffee' => 'script',
 						'less' => 'script',
-						'app-vg-app-coffee' => 'script-coffee'
+						'issue-vg-coffee' => 'script-coffee'
 					)
 				),
 
-				'@include' => array( $settings['dir']['app-vg'].'/index.html' )
+				'@include' => array( $settings['dir']['issue-vg'].'/index.html' )
+			),
+
+			'unipar' => array(
+
+				'@head' => array(
+					'@title' => 'Educação e Novas Tecnologias para o Ensino',
+					'@meta' => array(
+						'@description' => 'Aplicativo modelo da UNIPAR'
+					),
+
+					'@style' => array(
+						'bootstrap-css' => 'css',
+						'fontawesome' => 'css',
+						'issue-unipar-less'  => 'less'
+					)
+				),
+
+				'@body_end' => array(
+
+					'@script' => array( 
+						'jquery' => 'script',
+						'bootstrap-js' => 'script',
+						'coffee' => 'script',
+						'less' => 'script',
+						'issue-unipar-coffee' => 'script-coffee'
+					)
+				),
+
+				'@include' => array( $settings['dir']['issue-unipar'].'/index.html' )
 			)
 		)
 	)

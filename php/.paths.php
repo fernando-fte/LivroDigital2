@@ -5,7 +5,7 @@
 	$settings['wwwroot'] = 'http://'.$_SERVER['SERVER_NAME'].$settings['wwwproj']; // Configura seleção do servidor mais pasta local
 
 
-	# # # Configura path de diretórios
+	# # # Configura path de diretórios gerais
 
 	# diretorio de vendors
 	$settings['dir']['vendor'] = $settings['wwwroot'].'/vendor'; // Configura seleção do servidor mais pasta local
@@ -32,17 +32,24 @@
 
 	# # # #
 
+	# # # # #
 	# Diretorios de arquivos do livro
 	$settings['dir']['books'] = $settings['wwwroot'].'/books'; // Local de XML
-
-
-
-	# Diretorios de aplicativos
+	# Diretorio dos aplicativos
 	$settings['dir']['issue'] = $settings['wwwroot'].'/aplicativos'; // Local das aplicações rodando
-	$settings['dir']['issue-vg'] = $settings['dir']['issue'].'/vgconsultoria'; // Local das aplicações rodando
+	# # # # #
 
 
-	# # # Configura path arquivos e framework
+	# # # # #
+	# Rota de pastas
+	$settings['dir']['page-vg'] = $settings['wwwroot'].'/issues/vg/'; // Local base de todos os dados
+	$settings['dir']['page-unipar'] = $settings['wwwroot'].'/issues/unipar/'; // Local base de todos os dados
+	// $settings['dir']['page-disciplinas'] = $settings['wwwroot'].'/disciplina'; // Local base de todos os dados
+	# # # # #
+
+
+
+	# # # Configura path arquivos e framework geral
 	$settings['file'] = array(
 		# VENDORS
 		# # scripts
@@ -66,12 +73,26 @@
 		'app-js' => $settings['dir']['app-script'].'/app.js',
 		'app-coffee' => $settings['dir']['app-script'].'/app.coffee',
 		# # # #
-
-		# # aplicativo "livro digital"
-		'issue-vg-style-css' => $settings['dir']['issue-vg'].'/style/app.css',
-		'issue-vg-style-less' => $settings['dir']['issue-vg'].'/style/app.less',
-		'issue-vg-app-coffee' => $settings['dir']['issue-vg'].'/scripts/app.coffee'
-		# # # #
 	);
+
+
+	# # # APLICATIVO - VGCONSULTORIA # # #
+	$settings['dir']['issue-vg'] = $settings['dir']['issue'].'/vgconsultoria'; // Local das aplicações rodando
+
+	# # Arquivos do aplicativo VG
+	$settings['file']['issue-vg-css'] = $settings['dir']['issue-vg'].'/style/app.css';
+	$settings['file']['issue-vg-less'] = $settings['dir']['issue-vg'].'/style/app.less';
+	$settings['file']['issue-vg-coffee'] = $settings['dir']['issue-vg'].'/scripts/app.coffee';
+	# # # #
+
+	# # # APLICATIVO - UNIPAR # # #
+	$settings['dir']['issue-unipar'] = $settings['dir']['issue'].'/unipar'; // Local das aplicações rodando
+
+	# # Arquivos do aplicativo unipar
+	$settings['file']['issue-unipar-css'] = $settings['dir']['issue-unipar'].'/style/app.css';
+	$settings['file']['issue-unipar-less'] = $settings['dir']['issue-unipar'].'/style/app.less';
+	$settings['file']['issue-unipar-coffee'] = $settings['dir']['issue-unipar'].'/scripts/app.coffee';
+	# # # #
+
 	# # # # # # # # # / CONFIGURA PATH DE TODOS OS ELEMENTOS / # # # # # # # # #
 ?>

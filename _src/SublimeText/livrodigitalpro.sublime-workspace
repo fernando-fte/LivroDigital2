@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
+			"settings":
+			{
+				"buffer_size": 31454,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -578,20 +586,24 @@
 	"expanded_folders":
 	[
 		"/D/projeto/web/livrodigital",
-		"/D/projeto/web/livrodigital/_src",
-		"/D/projeto/web/livrodigital/_src/SublimeText",
-		"/D/projeto/web/livrodigital/contents",
-		"/D/projeto/web/livrodigital/contents/form",
-		"/D/projeto/web/livrodigital/contents/home",
-		"/D/projeto/web/livrodigital/php",
+		"/D/projeto/web/livrodigital/aplicativos",
+		"/D/projeto/web/livrodigital/aplicativos/unipar",
+		"/D/projeto/web/livrodigital/aplicativos/unipar/style",
+		"/D/projeto/web/livrodigital/contents/app",
+		"/D/projeto/web/livrodigital/contents/app/blocks",
 		"/D/projeto/web/livrodigital/php/vendor"
 	],
 	"file_history":
 	[
-		"/D/projeto/web/livrodigital/php/.functions.php",
+		"/D/projeto/web/livrodigital/aplicativos/unipar/index.html",
+		"/D/projeto/web/livrodigital/contents/app/basic/menu.html",
+		"/D/projeto/web/livrodigital/php/.paths.php",
+		"/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
 		"/D/projeto/web/livrodigital/php/.pages.php",
-		"/D/projeto/web/livrodigital/index.php",
+		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/D/projeto/web/livrodigital/contents/form/menu.html",
+		"/D/projeto/web/livrodigital/php/.functions.php",
+		"/D/projeto/web/livrodigital/index.php",
 		"/D/projeto/web/livrodigital/php/index.php",
 		"/D/projeto/web/livrodigital/php/.config.php",
 		"/D/projeto/web/livrodigital/php/teste/index.php",
@@ -600,7 +612,6 @@
 		"/D/projeto/web/livrodigital/.htaccess",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/.htaccess",
 		"/D/projeto/web/livrodigital/php/.config.pages.php",
-		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/index 2.html",
 		"/D/projeto/web/vg/livroDigital/_src/cmd.start.txt",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/index.html",
@@ -711,11 +722,7 @@
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing-unidade-i.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/marketing.html",
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-iii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-ii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino.html"
+		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-i.html"
 	],
 	"find":
 	{
@@ -759,6 +766,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'issue-vg'",
+			"/form",
+			"vg",
+			"VG",
+			"vg",
+			"echo path_relative($GLOBALS['settings']['dir']['app-vg'])['done'];",
+			"-style",
 			"page_config",
 			"$GLOBALS['settings']",
 			", $func",
@@ -879,14 +893,7 @@
 			"separa path relativo",
 			"processo",
 			"=",
-			"'success' => false,",
-			"	",
-			"log",
-			"url_drive_video",
-			"[text]",
-			"[text",
-			"<ol",
-			"letra"
+			"'success' => false,"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -894,6 +901,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'issue-unipar'",
 			"construct_page_required",
 			"$page[0].",
 			"<p",
@@ -1020,8 +1028,7 @@
 			"\\t<p data-book-section-label=\"Elenco Principal\">",
 			"\\t<p data-book-section-label=\"Diretor\">",
 			"\\t<p data-book-section-label=\"Gênero\">",
-			"\\t<p data-book-section-label=\"Nome do filme\">",
-			"<p data-book-section-label=\"Nome do filme\">"
+			"\\t<p data-book-section-label=\"Nome do filme\">"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1032,8 +1039,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3875,
+								3875
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1085,6 +1121,26 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				".pa",
+				"php\\.paths.php"
+			],
+			[
+				"menu",
+				"contents\\app\\basic\\menu.html"
+			],
+			[
+				"paths",
+				"php\\.paths.php"
+			],
+			[
+				".paths",
+				"php\\.paths.php"
+			],
+			[
+				"path",
+				"php\\.paths.php"
+			],
 			[
 				".pages",
 				"php\\.pages.php"
@@ -1316,10 +1372,6 @@
 			[
 				"apres",
 				"sources\\apresentacao.src"
-			],
-			[
-				"menu",
-				"sources\\menu-bar.src"
 			],
 			[
 				"app.",
