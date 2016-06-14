@@ -30,6 +30,8 @@
 	$settings['dir']['app-blocks'] = $settings['dir']['app'].'/blocks'; // Blocos das paginas
 	$settings['dir']['app-headers'] = $settings['dir']['app'].'/headers'; // Cabeçarios
 
+	# # Contents para o conversor de html-data
+	$settings['dir']['app-convert'] = $settings['dir']['contents'].'/html-data'; // Cabeçarios
 	# # # #
 
 	# # # # #
@@ -42,8 +44,9 @@
 
 	# # # # #
 	# Rota de pastas
-	$settings['dir']['page-vg'] = $settings['wwwroot'].'/issues/vg/'; // Local base de todos os dados
-	$settings['dir']['page-unipar'] = $settings['wwwroot'].'/issues/unipar/'; // Local base de todos os dados
+	$settings['dir']['page-vg'] = $settings['wwwroot'].'/issues/vg'; // Local base de todos os dados
+	$settings['dir']['page-unipar'] = $settings['wwwroot'].'/issues/unipar'; // Local base de todos os dados
+	$settings['dir']['page-convert'] = $settings['wwwroot'].'/html-data'; // Local base de todos os dados
 	// $settings['dir']['page-disciplinas'] = $settings['wwwroot'].'/disciplina'; // Local base de todos os dados
 	# # # # #
 
@@ -56,6 +59,7 @@
 		'jquery' => $settings['dir']['vendor-scripts'].'/jquery.min.js',
 		'coffee' => $settings['dir']['vendor-scripts'].'/coffee-script.js',
 		'less' => $settings['dir']['vendor-scripts'].'/less.min.js',
+		'phpjs' => $settings['dir']['vendor-scripts'].'/phpjs.js',
 		'bootstrap-js' => $settings['dir']['vendor-bootstrap'].'/bootstrap.min.js',
 		'materialize-js' => $settings['dir']['vendor-materialize'].'/js/materialize.min.js',
 

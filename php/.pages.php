@@ -52,6 +52,7 @@
 			'@head' => array(
 				'@title' => 'Todos os livros'
 			),
+
 			'@include' => array(
 				$settings['dir']['app-blocks'].'/livro.lista.html'
 			),
@@ -91,6 +92,24 @@
 				'@include' => array(
 					$settings['dir']['app-headers'].'/autor.edit.html',
 					$settings['dir']['app-blocks'].'/autor.form.html'
+				)
+			)
+		),
+
+		'html-data' => array(
+			'@head' => array(
+				'@title' => 'Conversor de html-data'
+			),
+
+			'@include' => array(
+				$settings['dir']['app-convert'].'/home.html',
+				$settings['dir']['app-convert'].'/form.html'
+			),
+
+			'@body_end' => array(
+
+				'@script' => array(
+					'phpjs' => 'script'
 				)
 			)
 		),
