@@ -1,16 +1,29 @@
 //== Configruações dos 
 .app-ref-content {
 
-	p { padding: 10px 20px; background-color: #E8E8E8; }
+	p {
+		padding: 10px 20px;
+		background-color: @app-cor-preto-10;
+	}
 
 	.app-ref-link {
 		background-color: @app-cor-padrao-10!important;
 	    border-right: 40px solid @app-cor-padrao-60;
 	    cursor: pointer;
 
-	    a { max-width: 100%; overflow: hidden; display: block;}
+	    a {
+	    	max-width: 100%;
+	    	overflow: hidden;
+	    	display: block;
+	    	color: inherit;
+	    	font-family: inherit;
+	    	font-weight: normal;
 
-		.app-var-ico (@app-ico-ir);
+	    	&:hover{ text-decoration: none; }
+		}
+		&:hover {background-color: @app-cor-azul-20;}
+
+		.app-var-ico(@app-ico-ir);
 		&:after {
 			color: @app-cor-preto-0;
 			display: block;
