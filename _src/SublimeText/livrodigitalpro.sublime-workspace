@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"na",
+				"navigator"
+			],
+			[
+				"ec",
+				"echo"
+			],
+			[
+				"s",
+				"swi	Switch"
+			],
+			[
+				"ctr",
+				"ctrlId"
+			],
+			[
+				"clien",
+				"client"
+			],
+			[
 				"arra",
 				"array"
 			],
@@ -102,10 +122,6 @@
 			[
 				"st",
 				"style"
-			],
-			[
-				"s",
-				"span	Tag"
 			],
 			[
 				"app-cor-pr",
@@ -498,35 +514,11 @@
 			[
 				"foin",
 				"font-family"
-			],
-			[
-				"the",
-				"thead	Tag"
-			],
-			[
-				"ar",
-				"article	Tag"
-			],
-			[
-				"se",
-				"section	Tag"
-			],
-			[
-				"els",
-				"else"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
-			"settings":
-			{
-				"buffer_size": 31454,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -587,25 +579,37 @@
 	[
 		"/D/projeto/web/livrodigital",
 		"/D/projeto/web/livrodigital/aplicativos",
-		"/D/projeto/web/livrodigital/aplicativos/unipar",
-		"/D/projeto/web/livrodigital/aplicativos/unipar/style",
+		"/D/projeto/web/livrodigital/contents",
 		"/D/projeto/web/livrodigital/contents/app",
-		"/D/projeto/web/livrodigital/contents/app/blocks",
-		"/D/projeto/web/livrodigital/php/vendor"
+		"/D/projeto/web/livrodigital/contents/html-data",
+		"/D/projeto/web/livrodigital/php"
 	],
 	"file_history":
 	[
-		"/D/projeto/web/livrodigital/aplicativos/unipar/index.html",
-		"/D/projeto/web/livrodigital/contents/app/basic/menu.html",
-		"/D/projeto/web/livrodigital/php/.paths.php",
-		"/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
+		"/D/projeto/web/vg/livroDigital/php/scripts/app.coffee",
 		"/D/projeto/web/livrodigital/php/.pages.php",
+		"/D/projeto/web/livrodigital/script/app.coffee",
+		"/D/projeto/web/livrodigital/php/index.php",
+		"/D/projeto/web/livrodigital/php/ajax.php",
+		"/D/projeto/web/livrodigital/php/.config.php",
+		"/D/projeto/web/vg/livroDigital/php/scripts/parse.coffee",
+		"/D/projeto/web/livrodigital/php/.paths.php",
+		"/D/projeto/web/livrodigital/contents/html-data/form.html",
+		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 5/Introdução à Neurociencia e Neuropedagogia/introducao-a-neurociencia-e-neuropedagogia.html",
+		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 5/Funções Neurais de Aprendizagem/funcoes-neuronais-de-aprendizagem.html",
+		"/D/projeto/web/livrodigital/script/app.form.coffee",
+		"/D/projeto/web/vg/livroDigital/php/teste.producao.php",
+		"/D/projeto/web/vg/livroDigital/scripts/vendors.js",
+		"/D/projeto/web/vg/livroDigital/scripts/app.js",
+		"/D/projeto/web/vg/livroDigital/scripts/app.coffee",
+		"/D/projeto/web/livrodigital/contents/html-data/home.html",
+		"/D/projeto/web/livrodigital/contents/app/basic/menu.html",
+		"/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
+		"/D/projeto/web/livrodigital/aplicativos/unipar/index.html",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/index.html",
 		"/D/projeto/web/livrodigital/contents/form/menu.html",
 		"/D/projeto/web/livrodigital/php/.functions.php",
 		"/D/projeto/web/livrodigital/index.php",
-		"/D/projeto/web/livrodigital/php/index.php",
-		"/D/projeto/web/livrodigital/php/.config.php",
 		"/D/projeto/web/livrodigital/php/teste/index.php",
 		"/D/projeto/web/livrodigital/contents/home/abertura.html",
 		"/D/projeto/web/livrodigital/php/teste/include_teste.php",
@@ -635,7 +639,6 @@
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/._.config.less",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/style/print.less",
 		"/D/projeto/web/livrodigital/aplicativos/vgconsultoria/scripts/app.coffee",
-		"/D/projeto/web/vg/livroDigital/scripts/app.coffee",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-2/index.html",
 		"/D/projeto/web/livrodigital/php/pages.php",
 		"/D/projeto/web/livrodigital/teste/teste_xml.php",
@@ -710,19 +713,7 @@
 		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html",
 		"/C/Users/Usuário/Desktop/iv.html",
 		"/C/Users/Usuário/Desktop/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html",
-		"/C/Users/Usuário/Desktop/figura.4.1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/links/figura.4.1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/figuras/grafico.4.1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/figuras/grafico.4.1-01.svg",
-		"/C/Users/Usuário/Desktop/Untitled-1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing-unidade-iii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing-unidade-ii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/done/app/marketing-unidade-i.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Marketing/marketing.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-i.html"
+		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html"
 	],
 	"find":
 	{
@@ -766,6 +757,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"form-control",
+			"app.",
+			"app.form ",
+			"app.form",
+			"window.app",
+			"window.",
+			"':{}}",
+			"conta",
+			"send",
+			"md5",
 			"'issue-vg'",
 			"/form",
 			"vg",
@@ -883,17 +884,7 @@
 			"ensina que existe uma sociedade apenas ",
 			"Pesponsabilidade ",
 			"teste",
-			"temp",
-			"CONFIGURA DIRETÓRIOS",
-			".'",
-			"typetext",
-			"result['done']",
-			"\"",
-			"trata caminho relativo",
-			"separa path relativo",
-			"processo",
-			"=",
-			"'success' => false,"
+			"temp"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1039,37 +1030,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/projeto/web/livrodigital/aplicativos/unipar/style/variables.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 31454,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3875,
-								3875
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1122,28 +1084,36 @@
 		"selected_items":
 		[
 			[
-				".pa",
-				"php\\.paths.php"
-			],
-			[
-				"menu",
-				"contents\\app\\basic\\menu.html"
-			],
-			[
-				"paths",
-				"php\\.paths.php"
-			],
-			[
-				".paths",
-				"php\\.paths.php"
+				".page",
+				"php\\.pages.php"
 			],
 			[
 				"path",
 				"php\\.paths.php"
 			],
 			[
+				"paths",
+				"php\\.paths.php"
+			],
+			[
+				".pa",
+				"php\\.pages.php"
+			],
+			[
+				".p",
+				"php\\.paths.php"
+			],
+			[
 				".pages",
 				"php\\.pages.php"
+			],
+			[
+				"menu",
+				"contents\\app\\basic\\menu.html"
+			],
+			[
+				".paths",
+				"php\\.paths.php"
 			],
 			[
 				"con",
