@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"bac",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
 				"op",
 				"option	Tag"
 			],
@@ -136,10 +148,6 @@
 				"color"
 			],
 			[
-				"tex",
-				"text-align"
-			],
-			[
 				"ac",
 				"action"
 			],
@@ -158,10 +166,6 @@
 			[
 				"i",
 				"italic"
-			],
-			[
-				"fon",
-				"font-style"
 			],
 			[
 				"min",
@@ -295,14 +299,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
-			"settings":
-			{
-				"buffer_size": 1096,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -366,20 +362,26 @@
 	"expanded_folders":
 	[
 		"/D/fernando.fte/Projetos/web/livrodigital",
-		"/D/fernando.fte/Projetos/web/livrodigital/books",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks",
-		"/D/fernando.fte/Projetos/web/livrodigital/script",
-		"/D/fernando.fte/Projetos/web/livrodigital/style"
+		"/D/fernando.fte/Projetos/web/livrodigital/php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/teste/trata-navegacao",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/teste/trata-syntax-da-pagina"
 	],
 	"file_history":
 	[
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic/menu.html",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
-		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.list.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/navigation/.config.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/navigation/index.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/navigation/.paths.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/php/navigation/.pages.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.pages.php",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/unipar/style/variables.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/referencias.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/unipar/style/app.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/unipar/style/app/outros.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.less",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/basic/menu.html",
+		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.list.html",
 		"/D/fernando.fte/Projetos/web/livrodigital/script/app.coffee",
 		"/D/fernando.fte/Projetos/web/livrodigital/php/.paths.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/autor.form.html",
@@ -406,12 +408,10 @@
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app/sumario.less",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/library/figura.4.1.svg",
 		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.css",
-		"/D/fernando.fte/Projetos/web/livrodigital/aplicativos/vgconsultoria/style/app.less",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/_src/cmd.start.txt",
 		"/D/fernando.fte/Projetos/web/livrodigital/contents/formularios/form.basic.xml",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/functions.php",
 		"/D/fernando.fte/Projetos/web/livrodigital/teste/teste_xml.php",
-		"/D/fernando.fte/Projetos/web/livrodigital/php/index.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/index.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/parse.book.php",
 		"/D/vgconsutoria/posto_[note_fte]/Livro Digital/Projeto/Desenvolvimento/php/login.php",
@@ -495,15 +495,7 @@
 		"/D/fernando.fte/Projetos/web/livroDigital/sources/referencias.src",
 		"/D/fernando.fte/Projetos/web/livroDigital/sources/capitulo.content.src",
 		"/D/fernando.fte/Projetos/web/livroDigital/scripts/app.js",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/cover.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/._.config.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/sumario.less",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/map.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/index.project.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/unidade.i.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/sources/unidade.i.content.src",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/scripts/app.js",
-		"/D/fernando.fte/Projetos/web/livroDigital/lab/index.php"
+		"/D/fernando.fte/Projetos/web/livroDigital/style/less/app/cover.less"
 	],
 	"find":
 	{
@@ -525,6 +517,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" / ",
+			" \\ ",
 			"label label-danger",
 			"<!-- /.col-lg-6 -->",
 			"<!-- /input-group -->",
@@ -650,9 +644,7 @@
 			"  ",
 			"normal",
 			"md",
-			"especial",
-			"bg",
-			"bg-variant"
+			"especial"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -686,38 +678,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/fernando.fte/Projetos/web/livrodigital/contents/app/blocks/livro.list.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1096,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1095,
-								1095
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -777,6 +739,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"varia",
+				"aplicativos\\unipar\\style\\variables.less"
+			],
 			[
 				".pages",
 				"php\\.pages.php"
@@ -910,10 +876,6 @@
 				"estrutura\\nav-bar.html"
 			],
 			[
-				"varia",
-				"style\\less\\bootstrap\\variables.less"
-			],
-			[
 				"gr",
 				"style\\less\\bootstrap\\grid.less"
 			],
@@ -1006,7 +968,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 245.0,
+	"side_bar_width": 206.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

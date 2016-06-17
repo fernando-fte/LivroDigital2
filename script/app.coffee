@@ -60,7 +60,7 @@ window.app.send = (post, func) ->
 		# Função ajax
 		$.ajax(
 			type: "post"
-			url: "php/index.php" #local no php
+			url: "index.php" #local no php
 			cache: false
 			data: send
 			async: false

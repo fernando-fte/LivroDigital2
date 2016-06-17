@@ -1,15 +1,14 @@
 <?php
 
-	# Oculta todos os erros do php
-	error_reporting(0);
-
 	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
-	// Move post e get para array separada
-	$post = $_POST;
-	$get = $_GET;
+	# Valida se já foi definido os parametros
+	if(!array_key_exists('post', $GLOBLAS)) { $post = $_POST; }
+	if(!array_key_exists('get', $GLOBLAS)) { $get = $_GET; }
+	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
 
 
-	# # # \ VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY \ # # #
+
+	# # # / VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY / # # #
 	if (parse_url($_SERVER['REQUEST_URI'])['query'] != false) {
 		
 		# # Explode as variaves
@@ -32,26 +31,17 @@
 		# # # Apaga dados usados
 		unset($temp, $me);
 	}
-	# # # \ VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY \ # # #
+	# # # / VALIDA SE FOI RECEBIDO UM CONJUNTO DE QUERY / # # #
 
 
-	// Config page default
-	# if (array_key_exists('page', $get)) { $get['page'] = 'home'; }
+
+	# # # / CONFIGURA PAGINAS EM GET / # # #
 	if (!array_key_exists('page', $get)) { $get['page'] = array('home'); }
-	# # # # # # # # # / CONFIGURA DADOS DE GET E POST / # # # # # # # # #
+	# # # / CONFIGURA PAGINAS EM GET / # # #
 
 
-	# # # / Inclui configuração de caminhos / # # #
-	include '.paths.php';
 
-	# # # / Inclui configuração de paginas / # # #
-	include '.pages.php';
-
-	# # # / Inclui conjuntos de função para configurações / # # #
-	include '.functions.php';
-
-
-	# # # # # / Configura nagevação / # # # # #
+	# # # # # / CONFIGURA NAGEVAÇÃO / # # # # #
 	$temp = parse_navgation()['done'];
 
 	if ($temp['path'] != false) {
@@ -61,5 +51,18 @@
 		$get = array_replace_recursive($temp['query'], $get);
 	}
 	unset($temp);
-	# # # # # / Configura nagevação / # # # # #
+	# # # # # / CONFIGURA NAGEVAÇÃO / # # # # #
+
+
+
+	# # # # # / ADICIONA CONSTRUCT DE PAGINAS / # # # # #
+	if (array_key_exists('ajax', $post)){
+		// print_r($get['page']);
+		include 'construct/page.includes.php';
+	}
+	# Caso o post seja um ajax
+	else if (!array_key_exists('ajax', $post)){
+		include 'construct/page.full.php';
+	}
+	# # # # # / ADICIONA CONSTRUCT DE PAGINAS / # # # # #
 ?>

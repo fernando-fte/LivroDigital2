@@ -1,11 +1,11 @@
 <?php
-	
-	// Inclui configurações globais
-	include '.config.php';
+
+	# Oculta todos os erros do php
+	error_reporting(0);
 
 	// Inclui vendor de seleção dinamica de banco
 	include 'vendor/phpSelectSQL.php';
 
-	// Inicia tratamento dos parametros
-	include 'ajax.php';
+	// Inclui configurações globais
+	include 'navigation/index.php';
 ?>
