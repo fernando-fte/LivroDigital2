@@ -1,1 +1,9 @@
-ErrorDocument 404 /livrodigital/index.php
+RewriteEngine on
+# Seleciona qualquer rota que nao seja um item front-end
+RewriteRule ^[\S]*[^.css|.less|.map|.js|.cofee]$ index.php
+
+# seleciona arquivos de leitura
+RewriteRule ^[\S]*[.php|.html]$ index.php
+
+# Direciona erro da pagina
+# ErrorDocument 404 /livrodigital/index.php
