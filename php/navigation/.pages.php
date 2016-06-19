@@ -97,20 +97,29 @@
 		),
 
 		'html-data' => array(
-
 			'@head' => array(
 				'@title' => 'Conversor de html-data'
 			),
 
 			'@include' => array(
-				$settings['dir']['app-convert'].'/home.html',
-				$settings['dir']['app-convert'].'/form.html'
+				$settings['dir']['app-htmldata-headers'].'/home.html',
+				$settings['dir']['app-htmldata-forms'].'/submit.html'
 			),
 
 			'@body_end' => array(
 
 				'@script' => array(
 					'phpjs' => 'script'
+				)
+			),
+
+			'converte' => array(
+				'@head' => array(
+					'@title' => 'Convertendo arquivos'
+				),
+
+				'@include' => array(
+					$settings['dir']['app-htmldata-forms'].'/convert.html'
 				)
 			)
 		),

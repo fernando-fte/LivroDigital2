@@ -1,5 +1,4 @@
 <?php
-
 	# Oculta todos os erros do php
 	error_reporting(0);
 

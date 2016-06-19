@@ -4,7 +4,6 @@
 	$settings['wwwproj'] = '/livrodigital'; // pasta atual do projeto
 	$settings['wwwroot'] = 'http://'.$_SERVER['SERVER_NAME'].$settings['wwwproj']; // Configura seleção do servidor mais pasta local
 
-
 	# # # Configura path de diretórios gerais
 
 	# diretorio de vendors
@@ -31,7 +30,9 @@
 	$settings['dir']['app-headers'] = $settings['dir']['app'].'/headers'; // Cabeçarios
 
 	# # Contents para o conversor de html-data
-	$settings['dir']['app-convert'] = $settings['dir']['contents'].'/html-data'; // Cabeçarios
+	$settings['dir']['app-htmldata'] = $settings['dir']['contents'].'/html-data'; // Contents para html-data
+	$settings['dir']['app-htmldata-forms'] = $settings['dir']['app-htmldata'].'/forms'; // Formulários
+	$settings['dir']['app-htmldata-headers'] = $settings['dir']['app-htmldata'].'/headers'; // Cabeçarios
 	# # # #
 
 	# # # # #

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"no",
+				"no_default"
+			],
+			[
+				"info",
+				"info_lote"
+			],
+			[
 				"na",
 				"navigator"
 			],
@@ -506,14 +514,6 @@
 			[
 				"background-c",
 				"background-color"
-			],
-			[
-				"cor",
-				"color"
-			],
-			[
-				"foin",
-				"font-family"
 			]
 		]
 	},
@@ -578,23 +578,49 @@
 	"expanded_folders":
 	[
 		"/D/projeto/web/livrodigital",
-		"/D/projeto/web/livrodigital/aplicativos",
 		"/D/projeto/web/livrodigital/contents",
 		"/D/projeto/web/livrodigital/contents/app",
 		"/D/projeto/web/livrodigital/contents/html-data",
-		"/D/projeto/web/livrodigital/php"
+		"/D/projeto/web/livrodigital/contents/html-data/.trash",
+		"/D/projeto/web/livrodigital/contents/html-data/forms",
+		"/D/projeto/web/livrodigital/contents/html-data/headers",
+		"/D/projeto/web/livrodigital/php",
+		"/D/projeto/web/livrodigital/php/navigation",
+		"/D/projeto/web/livrodigital/php/navigation/construct",
+		"/D/projeto/web/livrodigital/script"
 	],
 	"file_history":
 	[
+		"/D/projeto/web/livrodigital/php/index.php",
+		"/D/projeto/web/livrodigital/php/navigation/.config.php",
+		"/D/projeto/web/livrodigital/contents/html-data/forms/convert.html",
+		"/D/projeto/web/livrodigital/contents/html-data/forms/submit.html",
+		"/D/projeto/web/livrodigital/.htaccess",
+		"/D/projeto/web/livrodigital/php/navigation/.pages.php",
+		"/D/projeto/web/livrodigital/.trash/php/.pages.php",
+		"/D/projeto/web/livrodigital/.trash/php/.paths.php",
+		"/D/projeto/web/livrodigital/php/navigation/.paths.php",
+		"/D/projeto/web/livrodigital/contents/html-data/convert.html",
+		"/D/projeto/web/livrodigital/php/navigation/.functions.php",
+		"/D/projeto/web/livrodigital/contents/html-data/form.html",
+		"/D/projeto/web/livrodigital/php/construct/index.php",
+		"/D/projeto/web/livrodigital/contents/html-data/render.php",
+		"/D/projeto/web/livrodigital/script/app.coffee",
+		"/D/projeto/web/livrodigital/.gitignore",
+		"/D/projeto/web/livrodigital/php/ajax.php",
+		"/D/projeto/web/area51/Cria-pastas/Unipar/Livro Digital/bkp/Lote 9/lote9.info",
+		"/D/projeto/web/area51/Cria-pastas/Unipar/cria-pastas.php",
+		"/D/projeto/web/area51/Cria-pastas/Unipar/Livro Digital/bkp/Lote 10/lote10.info",
+		"/D/projeto/web/area51/Cria-pastas/Unipar/Livro Digital/Lote 8/lote8.info",
+		"/D/Google Drive/.Projetos/Unipar/Livro Digital/Lote 6/Gestão Ambiental [ea2f2a]/02.Editoração/.outros/Marcacao/Gestão Ambiental [ea2f2a].html",
+		"/D/Google Drive/.Projetos/Unipar/.Projeto/02.Editoração/Livro Digital/Compilacao/book.query.txt",
+		"/D/Google Drive/.Projetos/Unipar/Livro Digital/Lote 6/Fisiopatologia da obesidade [0a2b44]/02.Editoração/.outros/Marcacao/Fisiopatologia da obesidade [0a2b44].html",
+		"/D/Google Drive/.Projetos/Unipar/Livro Digital/Lote 6/Fisiopatologia da obesidade [0a2b44]/02.Editoração/.outros/Marcacao/Fisiopatologia da obesidade [0a2b44] - vídeo.html",
 		"/D/projeto/web/vg/livroDigital/php/scripts/app.coffee",
 		"/D/projeto/web/livrodigital/php/.pages.php",
-		"/D/projeto/web/livrodigital/script/app.coffee",
-		"/D/projeto/web/livrodigital/php/index.php",
-		"/D/projeto/web/livrodigital/php/ajax.php",
 		"/D/projeto/web/livrodigital/php/.config.php",
 		"/D/projeto/web/vg/livroDigital/php/scripts/parse.coffee",
 		"/D/projeto/web/livrodigital/php/.paths.php",
-		"/D/projeto/web/livrodigital/contents/html-data/form.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 5/Introdução à Neurociencia e Neuropedagogia/introducao-a-neurociencia-e-neuropedagogia.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 5/Funções Neurais de Aprendizagem/funcoes-neuronais-de-aprendizagem.html",
 		"/D/projeto/web/livrodigital/script/app.form.coffee",
@@ -613,7 +639,6 @@
 		"/D/projeto/web/livrodigital/php/teste/index.php",
 		"/D/projeto/web/livrodigital/contents/home/abertura.html",
 		"/D/projeto/web/livrodigital/php/teste/include_teste.php",
-		"/D/projeto/web/livrodigital/.htaccess",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/.htaccess",
 		"/D/projeto/web/livrodigital/php/.config.pages.php",
 		"/C/Users/Usuário/AppData/Local/Temp/fz3temp-1/index 2.html",
@@ -649,7 +674,6 @@
 		"/D/projeto/web/livrodigital/_src/livrodigital",
 		"/D/projeto/web/livrodigital/php/.config.pages.json",
 		"/D/projeto/web/livrodigital/php/.navigation.json",
-		"/D/projeto/web/livrodigital/.gitignore",
 		"/D/projeto/web/vg/livroDigital/temp/modelo/book.query.txt",
 		"/D/projeto/web/vg/livroDigital/temp/modelo/book.clean.html",
 		"/D/projeto/web/vg/livroDigital/temp/modelo/book.html",
@@ -694,26 +718,7 @@
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Bioestatística/processamento/Bioestatística - undiade i[marcacao].html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Gerenciamento de Resíduos Sólidos e Recursos Hídricos/done/app/gerenciamento-de-residuos-solidos-e-recursos-hidricos.html",
 		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Gerenciamento de Resíduos Sólidos e Recursos Hídricos/Processamento/book.video.list.html",
-		"/D/projeto/web/vg/livroDigital/temp/modelo/book.video.list.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Transtorno de Aprendizagem/processamento/Transtorno de Aprendizagem - vídeos.txt",
-		"/D/Google Drive/.Usuarios/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Gerenciamento de Resíduos Sólidos e Recursos Hídricos/gerenciamento-de-residuos-solidos-e-recursos-hidricos.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Gerenciamento de Resíduos Sólidos e Recursos Hídricos/Processamento/Gerenciamento de Resíduos Sólidos e Recursos Hídricos [marcacao].html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Projeto/Materiais/Estudo/LaTex/matematica_teste_1.html",
-		"/C/Arquivos de Programas RFB/IRPF2016/tutorial/tutorial.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 3/Metodologia de Pesquisa Científica/done/app/metodologia-de-pesquisa-cientifica-unidade-ii.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 3/Metodologia de Pesquisa Científica/metodologia-de-pesquisa-cientifica.html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Transtorno de Aprendizagem/done/app/transtornos-de-aprendizagem-[tratamento].html",
-		"/D/Google Drive/Fernando/Produção Editorial/Livro Digital/Produção/Lote 4/Transtorno de Aprendizagem/done/app/transtornos-de-aprendizagem.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-iii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/bioetica.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Bioética/done/app/bioetica-unidade-ii.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/educacao-e-novas-tecnologias-para-o-ensino.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/figuras/figura.4.1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/processamento/figuras/INLINE_figura.4.1.svg",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/Lote 3/Educação e Novas Tecnologias para o Ensino/done/app/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html",
-		"/C/Users/Usuário/Desktop/iv.html",
-		"/C/Users/Usuário/Desktop/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html",
-		"/D/projeto/web/vg/livroDigital/_src/Processamento/.Done/educacao-e-novas-tecnologias-para-o-ensino-unidade-iv.html"
+		"/D/projeto/web/vg/livroDigital/temp/modelo/book.video.list.html"
 	],
 	"find":
 	{
@@ -757,6 +762,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"app-htmldata-forms",
+			"htmldata.",
+			"app-convert",
+			"$settings['dir']['contents']",
+			"parse_navgation",
+			"Titulo = ",
 			"form-control",
 			"app.",
 			"app.form ",
@@ -878,13 +889,7 @@
 			"class=\"cover-btn-nav\"> ",
 			"data-app-ctrl='{\"togo\":{\"to\"",
 			" data-app-ctrl",
-			"library/6e1ba5deb1d776b987d720ce335c3318",
-			"e",
-			"Pesponsabilidade",
-			"ensina que existe uma sociedade apenas ",
-			"Pesponsabilidade ",
-			"teste",
-			"temp"
+			"library/6e1ba5deb1d776b987d720ce335c3318"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1084,12 +1089,24 @@
 		"selected_items":
 		[
 			[
-				".page",
-				"php\\.pages.php"
+				"path",
+				".trash\\php\\.paths.php"
 			],
 			[
-				"path",
-				"php\\.paths.php"
+				".",
+				".trash\\php\\.pages.php"
+			],
+			[
+				".pag",
+				".trash\\php\\.pages.php"
+			],
+			[
+				"construct",
+				"php\\construct\\index.php"
+			],
+			[
+				".page",
+				"php\\.pages.php"
 			],
 			[
 				"paths",

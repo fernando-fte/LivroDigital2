@@ -781,6 +781,10 @@
 			$result['success'] = true;
 		}
 
+		else if ($id == 'local') {
+			echo substr($_SERVER['REQUEST_URI'], 0, -1);
+		}
+
 		else {
 			$result['success'] = false; 
 			$result['erro'] = true; 
