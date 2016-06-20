@@ -1,6 +1,10 @@
-	
-	<code>
-<?php
-		print_r($GLOBALS['post']);
+<?php 
+// $post = $GLOBALS['post'];
+// REMOVER 
+include 'temp/htmldata.php';
 ?>
-	</code>
+
+<!-- Contents para os dados do html data -->
+<div data-ctrl='{"html-data":true}' class="hidden"><?php echo $post['html-data']?></div>
+
+

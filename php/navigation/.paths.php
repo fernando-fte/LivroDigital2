@@ -77,6 +77,7 @@
 
 		'app-js' => $settings['dir']['app-script'].'/app.js',
 		'app-coffee' => $settings['dir']['app-script'].'/app.coffee',
+		'app-htmldata-coffee' => $settings['dir']['app-script'].'/app.html-data.coffee',
 		# # # #
 	);
 

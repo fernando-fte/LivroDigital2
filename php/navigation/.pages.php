@@ -34,6 +34,7 @@
 					'bootstrap-js' => 'script',
 					'coffee' => 'script',
 					'less' => 'script',
+					'phpjs' => 'script',
 					'app-coffee' => 'script-coffee'
 				)
 			),
@@ -106,21 +107,22 @@
 				$settings['dir']['app-htmldata-forms'].'/submit.html'
 			),
 
-			'@body_end' => array(
-
-				'@script' => array(
-					'phpjs' => 'script'
-				)
-			),
-
 			'converte' => array(
 				'@head' => array(
 					'@title' => 'Convertendo arquivos'
 				),
 
 				'@include' => array(
+					$settings['dir']['app-htmldata-headers'].'/convert.html',
 					$settings['dir']['app-htmldata-forms'].'/convert.html'
-				)
+				),
+
+				'@body_end' => array(
+
+					'@script' => array( 
+						'app-htmldata-coffee' => 'script-coffee'
+					)
+				),
 			)
 		),
 
