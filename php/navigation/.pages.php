@@ -175,6 +175,37 @@
 						'bootstrap-css' => 'css',
 						'fontawesome' => 'css',
 						'issue-unipar-less'  => 'less'
+						// 'issue-unipar-css'  => 'css'
+					)
+				),
+
+				'@body_end' => array(
+
+					'@script' => array( 
+						'jquery' => 'script',
+						'bootstrap-js' => 'script',
+						'less' => 'script',
+						'coffee' => 'script',
+						'issue-unipar-coffee' => 'script-coffee'
+						// 'issue-unipar-js' => 'script',
+					)
+				),
+
+				'@include' => array( $settings['dir']['issue-unipar'].'/index.html' )
+			),
+
+			'uniube' => array(
+
+				'@head' => array(
+					'@title' => 'Livro digital',
+					'@meta' => array(
+						'@description' => 'Aplicativo modelo da UNIUBE-POS'
+					),
+
+					'@style' => array(
+						'bootstrap-css' => 'css',
+						'fontawesome' => 'css',
+						'issue-unipar-less'  => 'less'
 					)
 				),
 
@@ -189,8 +220,8 @@
 					)
 				),
 
-				'@include' => array( $settings['dir']['issue-unipar'].'/index.html' )
-			)
+				'@include' => array( $settings['dir']['issue-uniube'].'/index.html' )
+			),
 		)
 	)
 	# # # # # # # # # /  DEFINE PAGINAS DA APLICAÇÃO / # # # # # # # # #

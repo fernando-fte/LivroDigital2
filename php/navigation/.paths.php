@@ -45,8 +45,9 @@
 
 	# # # # #
 	# Rota de pastas
-	$settings['dir']['page-vg'] = $settings['wwwroot'].'/issues/vg'; // Local base de todos os dados
-	$settings['dir']['page-unipar'] = $settings['wwwroot'].'/issues/unipar'; // Local base de todos os dados
+	$settings['dir']['page-vg'] = $settings['wwwroot'].'/issues/vg'; // Local do aplicativo vg
+	$settings['dir']['page-unipar'] = $settings['wwwroot'].'/issues/unipar'; // Local do aplicativo unipar
+	$settings['dir']['page-uniube'] = $settings['wwwroot'].'/issues/uniube'; // Local do aplicativo uniube
 	$settings['dir']['page-convert'] = $settings['wwwroot'].'/html-data'; // Local base de todos os dados
 	// $settings['dir']['page-disciplinas'] = $settings['wwwroot'].'/disciplina'; // Local base de todos os dados
 	# # # # #
@@ -91,14 +92,28 @@
 	$settings['file']['issue-vg-coffee'] = $settings['dir']['issue-vg'].'/scripts/app.coffee';
 	# # # #
 
+
+
 	# # # APLICATIVO - UNIPAR # # #
 	$settings['dir']['issue-unipar'] = $settings['dir']['issue'].'/unipar'; // Local das aplicações rodando
 
 	# # Arquivos do aplicativo unipar
 	$settings['file']['issue-unipar-css'] = $settings['dir']['issue-unipar'].'/style/app.css';
 	$settings['file']['issue-unipar-less'] = $settings['dir']['issue-unipar'].'/style/app.less';
+	$settings['file']['issue-unipar-js'] = $settings['dir']['issue-unipar'].'/scripts/app.js';
 	$settings['file']['issue-unipar-coffee'] = $settings['dir']['issue-unipar'].'/scripts/app.coffee';
 	# # # #
 
+
+
+	# # # APLICATIVO - UNIUBE-POS # # #
+	$settings['dir']['issue-uniube'] = $settings['dir']['issue'].'/uniube'; // Local das aplicações rodando
+
+	# # Arquivos do aplicativo uniube
+	$settings['file']['issue-uniube-css'] = $settings['dir']['issue-uniube'].'/style/app.css';
+	$settings['file']['issue-uniube-less'] = $settings['dir']['issue-uniube'].'/style/app.less';
+	$settings['file']['issue-uniube-coffee'] = $settings['dir']['issue-uniube'].'/scripts/app.coffee';
+	$settings['file']['issue-uniube-js'] = $settings['dir']['issue-uniube'].'/scripts/app.js';
+	# # # #
 	# # # # # # # # # / CONFIGURA PATH DE TODOS OS ELEMENTOS / # # # # # # # # #
 ?>
