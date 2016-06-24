@@ -205,7 +205,7 @@
 					'@style' => array(
 						'bootstrap-css' => 'css',
 						'fontawesome' => 'css',
-						'issue-unipar-less'  => 'less'
+						'issue-uniube-less'  => 'less'
 					)
 				),
 
@@ -216,7 +216,8 @@
 						'bootstrap-js' => 'script',
 						'coffee' => 'script',
 						'less' => 'script',
-						'issue-unipar-coffee' => 'script-coffee'
+						'issue-uniube-coffee' => 'script-coffee',
+						'mathjax' => 'mathjax'
 					)
 				),
 
