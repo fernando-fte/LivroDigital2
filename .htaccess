@@ -1,6 +1,6 @@
 RewriteEngine on
 # Seleciona qualquer rota que nao seja um item front-end
-RewriteRule ^[\S]*[^.css|.less|.map|.js|.cofee|.jpg|.gif|.svg]$ index.php
+RewriteRule ^[\S]*[^.css|.less|.map|.js|.cofee|.jpg|.gif|.svg|.hsvg]$ index.php
 
 # seleciona arquivos de leitura
 RewriteRule ^[\S]*[.php|.html]$ index.php

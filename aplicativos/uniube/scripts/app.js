@@ -482,10 +482,14 @@
         var scrollItem, scrollStart;
         scrollItem = $(post["this"]).offset().top;
         scrollStart = $('body').height() * 1.2;
-        if (scrollItem <= scrollStart) {
-          $(post["this"]).after("<objec data-object class=\"" + ($(post["this"])[0].className) + "\"></object>");
-          $('[data-object]').load($(post["this"])[0].currentSrc);
-          return $(post["this"]).remove();
+        if ($(post["this"]).data('app-ctrl').incorporar !== false) {
+          if (scrollItem <= scrollStart) {
+            $(post["this"]).after("<objec data-object class=\"" + ($(post["this"])[0].className) + "\"></object>");
+            $('[data-object]').load($(post["this"])[0].currentSrc);
+            $('[data-object]').removeAttr('data-object');
+            $(post["this"]).data('app-ctrl').incorporar = false;
+            return $(post["this"]).removeClass('on');
+          }
         }
       });
     }

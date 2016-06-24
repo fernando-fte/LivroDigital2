@@ -530,13 +530,20 @@ $.appCtrl.incorporar = (post) ->
 
 		# # # Incorpora se estiver proximo
 		scrollReference.bind 'scroll', ->
-			scrollItem = $(post.this).offset().top
-			scrollStart = ($('body').height() * 1.2)
 
-			if scrollItem <= scrollStart
-				$(post.this).after("<objec data-object class=\"#{$(post.this)[0].className}\"></object>")
-				$('[data-object]').load($(post.this)[0].currentSrc)
-				$(post.this).remove()
+			scrollItem = $(post.this).offset().top # Define posição do item
+			scrollStart = ($('body').height() * 1.2) # Valida tamanho do quadro
+
+			# Valida se o item já foi incorporado
+			if $(post.this).data('app-ctrl').incorporar != false
+
+				# Caso esteja proximo
+				if scrollItem <= scrollStart
+					$(post.this).after("<objec data-object class=\"#{$(post.this)[0].className}\"></object>") # Adiciona objeto depois do link
+					$('[data-object]').load($(post.this)[0].currentSrc) # Importa valor
+					$('[data-object]').removeAttr('data-object') # Remove identificador do objeto
+					$(post.this).data('app-ctrl').incorporar = false # Define incorporar com osucesso
+					$(post.this).removeClass('on') # Remove visualização da foto
 
 
 $.appCtrl $("[data-app-ctrl]")
